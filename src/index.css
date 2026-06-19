@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-bg-base text-ink-primary font-mono antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background-color: rgba(124, 92, 255, 0.35);
+    color: #fff;
+  }
+
+  /* scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0f1e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2742;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a3358;
+  }
+}
+
+@layer components {
+  .display-font {
+    font-family: "Inter", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+
+  .code-comment {
+    @apply text-ink-muted;
+  }
+
+  .code-highlight {
+    @apply bg-accent-soft text-ink-primary px-1.5 py-0.5 rounded-sm;
+  }
+
+  .panel {
+    @apply bg-bg-panel border border-bg-border rounded-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-5 py-3 rounded-md transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-bg-border hover:border-accent text-ink-primary font-medium px-5 py-3 rounded-md transition-colors;
+  }
+
+  .tab {
+    @apply px-4 py-3 text-sm text-ink-secondary hover:text-ink-primary transition-colors relative;
+  }
+
+  .tab-active {
+    @apply text-ink-primary;
+  }
+}
+
+/* line number column */
+.line-numbers {
+  @apply text-ink-dim text-right pr-4 select-none;
+  font-variant-numeric: tabular-nums;
+}

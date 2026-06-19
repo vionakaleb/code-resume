@@ -1,0 +1,324 @@
+{
+  "main": {
+    "name": "Viona Kaleb",
+    "fullname": "Viona Zatil Aqmar Kaleb",
+    "role": "Software Engineer",
+    "tagline": "MSIT",
+    "shortBio": "Building digital products at large scale. Fullstack, frontend-heavy, UI/UX-minded, with a soft spot for cool systems and street cats.",
+    "longBio": "<p>Deployed 3D wayfinding apps to serve thousands of visitors in high-traffic Singapore buildings. Architected a UK trading platform's Frontend with USD124M+ revenues and serving 1.2 million accounts globally. <p>Currently digitizing the largest state-owned bank in Indonesia, live in hundreds of branches, used by thousands of banking staff and customers, cutting fraud by 85%.</p> <p>Outside work: Building tools to help people, writing articles, reading novels, trail running and patting street cats. Aiming to build AI research into production-grade services that move industries forward at scale.</p>",
+    "startedWorking": 2017,
+    "location": "Jakarta, Indonesia",
+    "languages": "English, Indonesian",
+    "email": "vionakaleb@gmail.com",
+    "phone": "",
+    "resumeUrl": "/Frontend Resume - Viona Z. A. Kaleb.pdf",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFWtwDT_KfW8A/profile-displayphoto-crop_800_800/B56Z6tesfrI8AI-/0/1781026966395?e=1783555200&v=beta&t=QHHk6_L7rO6y46KP0umc39JWRGcrXclPk633uNE2drg",
+    "social": [
+      { "name": "GitHub", "url": "https://github.com/vionakaleb" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/vionakaleb" },
+      { "name": "Medium", "url": "https://vionakaleb.medium.com/" },
+      {
+        "name": "Behance",
+        "url": "https://behance.net/gallery/71544345/Vio-Web-Portfolio"
+      }
+    ]
+  },
+  "stack": [
+    {
+      "name": "Typescript",
+      "level": 80
+    },
+    {
+      "name": "React",
+      "level": 80
+    },
+    {
+      "name": "Angular",
+      "level": 80
+    },
+    {
+      "name": "Vue",
+      "level": 70
+    },
+    {
+      "name": "Next.js",
+      "level": 70
+    },
+    {
+      "name": "Redux/Hooks",
+      "level": 80
+    },
+    {
+      "name": "RTK/React Query",
+      "level": 70
+    },
+    {
+      "name": "GraphQL",
+      "level": 70
+    },
+    {
+      "name": "Firebase",
+      "level": 70
+    },
+    {
+      "name": "Tailwind/SCSS",
+      "level": 90
+    }
+  ],
+  "awards": {
+    "industry": [
+      { "title": "Government Scholarship for Top Graduates", "year": "2017" },
+      { "title": "MSIT, Machine Learning focus", "year": "2026" },
+      { "title": "Published on Medium, ML and Software Dev", "year": "2024" }
+    ],
+    "personal": [
+      {
+        "title": "Smart Branch live in 1,000+ branches, 30M users",
+        "year": "2024"
+      },
+      { "title": "YourPropFirm USD 124M+ revenue platform", "year": "2023" },
+      { "title": "Singapore landmarks wayfinding shipped", "year": "2020" },
+      { "title": "Indonesia's first e-sports platform", "year": "2019" }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "I highly recommend Viona. Having worked closely with her in the Front-end squad for the Smart Branch Bank Mandiri project, I witnessed firsthand her strong technical skills and problem-solving abilities.",
+      "author": "Wahyu Fatur Rizki",
+      "role": "Software Engineer at Bank Mandiri"
+    },
+    {
+      "quote": "I had the pleasure of working with Viona during her time at HypeStacks (now known as QuantTechnology). In my experience, Viona’s performance was exceptional; she consistently delivered tasks and projects on time, maintaining an impressive track record with minimal errors or bugs.",
+      "author": "Muh. Faldi Taufik",
+      "role": "QA Engineer at Hypestacks"
+    },
+    {
+      "quote": "I had the privilege of working closely with Viona at  SuperApp (YC W18), where she consistently stood out as one of our strongest front-end (and frontend-focused fullstack) engineers.",
+      "author": "Halga Tamici",
+      "role": "Engineering Manager at SuperApp (YC W18)"
+    },
+    {
+      "quote": "She has a great Front-End skill, able to turn UX design into a good web.  She's also a fun person. Overall, she could be a nice asset for your company.",
+      "author": "Alvian Supriadi",
+      "role": "Software Engineer at Yamisok Platform"
+    }
+  ],
+  "education": [
+    {
+      "school": "President University",
+      "degree": "Master of Science in IT (MSIT)",
+      "graduated": "2026",
+      "description": "Machine Learning focus. Thesis on Temporal Convolutional Networks for karate movement classification, combining MoveNet Lightning pose estimation with a dual-head TCN.",
+      "logo": "campus.png"
+    },
+    {
+      "school": "President University",
+      "degree": "Bachelor of Science in IT (BSIT)",
+      "graduated": "2021",
+      "description": "Awarded a Bachelor's scholarship for being one of the top graduates, funded by the government. Thesis on breast cancer prediction using k-NN, reaching ~96.49% accuracy at K=17.",
+      "logo": "campus.png"
+    }
+  ],
+  "work": [
+    {
+      "company": "Bank Mandiri",
+      "title": "Software Engineer",
+      "years": "Jan 2024 - Present",
+      "descriptions": [
+        "Built features for Smart Branch by Mandiri, a digital banking platform live across 1,000+ branches with 30 million users nationwide, contributing to an 85% reduction in fraud incidents.",
+        "Shipped wholesale banking features for KOPRA by Mandiri, the platform behind IDR 10,000+ trillion (USD 600B+) in annual transaction volume.",
+        "Delivered banking workflows that fulfilled strict security, compliance and audit standards in collaboration with product, backend and QA teams."
+      ],
+      "skills": ["Angular", "TypeScript", "RxJS", "NgRx", "Jest"],
+      "website": "https://www.bankmandiri.co.id/",
+      "logo": "company-mandiri.jpeg"
+    },
+    {
+      "company": "Hypestacks",
+      "title": "Frontend Engineer",
+      "years": "Jan 2023 - Jan 2024",
+      "descriptions": [
+        "Architected and built the frontend stack from scratch for YourPropFirm, a B2B real-time trading analytics platform with USD 124M+ revenues, serving 1.2M+ trading accounts and 65+ prop firm clients globally.",
+        "Worked cross-functionally with a distributed international team to turn complex trading concepts into performant real-time data visualization UI."
+      ],
+      "skills": ["React", "TypeScript", "RTK Query", "Redux", "Hooks"],
+      "website": "https://hypestacks.com/",
+      "logo": "company-hypestacks.jpeg"
+    },
+    {
+      "company": "SuperApp (YC W18)",
+      "title": "Frontend Engineer",
+      "years": "Jan 2021 - Jan 2023",
+      "descriptions": [
+        "Owned full frontend delivery across multiple product lines for a social commerce and hyper-local supply chain platform serving Indonesia's retail ecosystem.",
+        "Pushed test coverage to 90% using Jest and React Testing Library, cutting regression bugs in production.",
+        "Shipped merchant onboarding, ordering and logistics features in partnership with product and design."
+      ],
+      "skills": ["React", "TypeScript", "Redux"],
+      "website": "https://superapp.id/",
+      "logo": "company-super.jpg"
+    },
+    {
+      "company": "Adactive Asia",
+      "title": "Front-End Developer",
+      "years": "Jan 2020 - Jan 2021",
+      "descriptions": [
+        "Deployed 3D wayfinding systems to major Singapore landmarks including the Supreme Court, Republic Plaza, and Woods Square, serving thousands of visitors in high-traffic government and commercial buildings.",
+        "Integrated 3D rendering with real-time location data alongside a multinational engineering team."
+      ],
+      "skills": ["React", "Vanilla JS", "Firebase", "Canvas", "GSAP"],
+      "website": "https://www.adactive.asia/",
+      "logo": "company-adactive.jpeg"
+    },
+    {
+      "company": "Yamisok Platform",
+      "title": "Frontend Engineer",
+      "years": "Jan 2018 - Jan 2020",
+      "descriptions": [
+        "Built Indonesia's first integrated e-sports community and tournament platform, connecting players with tournament organizers and sponsors. Supported partnerships with Tokopedia, JD.ID, and Firstmedia.",
+        "Shaped the early gaming scene in Indonesia by giving players a clear path from casual to competitive play."
+      ],
+      "skills": ["Vue", "Vuex", "Nuxt", "Bootstrap Vue"],
+      "website": "https://yamisok.com",
+      "logo": "company-yamisok.jpeg"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Smart Branch by Mandiri",
+      "description": "Digital banking platform live across 1,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
+      "tech": ["Angular", "TypeScript", "Jest"],
+      "url": "https://www.bankmandiri.co.id/smart-branch",
+      "image": "E-FormLanding.png",
+      "github": "",
+      "tag": "Featured"
+    },
+    {
+      "title": "KOPRA by Mandiri",
+      "description": "Comprehensive wholesale financial platform behind USD 600B+ in annual transaction volume. Indonesia's Best Integrated Trade Financial Platform.",
+      "tech": ["Angular", "React", "TypeScript"],
+      "url": "https://koprabymandiri.com/",
+      "image": "KopraSOPP.png",
+      "github": "",
+      "tag": "Featured"
+    },
+    {
+      "title": "YourPropFirm",
+      "description": "B2B real-time trading analytics platform with USD 124M+ revenues, serving 1.2M+ trading accounts and 65+ prop firms worldwide. Built from the first commit.",
+      "tech": ["Next.js", "TailwindCSS", "Power BI"],
+      "url": "https://yourpropfirm.com/",
+      "image": "YourPropFirmDashboardV2.png",
+      "github": "",
+      "tag": "Featured"
+    },
+    {
+      "title": "Superagen Ecommerce",
+      "description": "Ecommerce, supply chain, and logistics system for Indonesia's social commerce ecosystem.",
+      "tech": ["React", "Redux", "Tailwind"],
+      "url": "https://superapp.id/",
+      "image": "SuperagenOrder.png",
+      "github": "",
+      "tag": "Featured"
+    },
+
+    {
+      "title": "Singapore Supreme Courts",
+      "description": "3D wayfinding app deployed at the Singapore Supreme Court. High-traffic, public-facing.",
+      "tech": ["React", "Canvas", "GSAP"],
+      "url": "https://www.adactive.asia/id",
+      "image": "SupremeCourts.jpg",
+      "github": "",
+      "tag": "Featured"
+    },
+    {
+      "title": "Singapore Discovery Centre",
+      "description": "Wayfinding app for Singapore Discovery Centre",
+      "image": "SDC.jpg",
+      "url": "https://www.adactive.asia/id",
+      "github": "",
+      "tech": ["React.js"],
+      "tag": "Featured"
+    },
+    {
+      "title": "Woodsquare",
+      "description": "Wayfinding app for Woodsquare Singapore",
+      "image": "Woodsquare.jpg",
+      "url": "https://www.adactive.asia/id",
+      "github": "",
+      "tech": ["React.js"],
+      "tag": "Featured"
+    },
+    {
+      "title": "Yamisok Platform",
+      "description": "Indonesia's first integrated e-sports community and tournament platform.",
+      "tech": ["Vue", "Vuex", "Nuxt"],
+      "url": "https://yamisok.com/",
+      "image": "Yamisok2.jpg",
+      "github": "",
+      "tag": "Featured"
+    },
+    {
+      "title": "ATS Resume Profiler",
+      "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV against real job descriptions.",
+      "tech": ["React", "Vite", "Tailwind"],
+      "url": "https://resume-profiler.vercel.app/",
+      "image": "ats-generator.png",
+      "github": "",
+      "tag": "Side project"
+    },
+    {
+      "title": "Verona by Telkomsel",
+      "description": "Vendor management system used at Telkomsel.",
+      "tech": ["Vue"],
+      "url": "https://verona.telkomsel.com/",
+      "image": "Verona.png",
+      "github": "",
+      "tag": "Client"
+    },
+    {
+      "title": "Yummykitchen - Food Catalog",
+      "description": "Yummykitchen Food Catalog",
+      "image": "OrderFoodMobile.png",
+      "url": "https://www.yummycorp.com/",
+      "github": "",
+      "tech": ["React.js", "Redux", "Tailwind"],
+      "tag": "Client"
+    },
+    {
+      "title": "Firstwarriors by FirstMedia",
+      "description": "Firstwarriors by FirstMedia esports tournament",
+      "image": "Firstwarrior.jpg",
+      "url": "https://www.firstmedia.com/article/first-media-gelar-first-warriors",
+      "github": "",
+      "tech": ["Vue.js"],
+      "tag": "Client"
+    },
+    {
+      "title": "IESPL by Tokopedia",
+      "description": "IESPL by Tokopedia esports tournament",
+      "image": "IESPL.jpg",
+      "url": "https://escharts.com/organizers/iespl",
+      "github": "",
+      "tech": ["Vue.js"],
+      "tag": "Client"
+    },
+    {
+      "title": "IHSL by JD.ID",
+      "description": "IHSL by JD.ID esports tournament",
+      "image": "IHSL.jpg",
+      "url": "https://esports.merahputih.com/mobile-legends/news/2019/02/074177d3eb6371e32c16c55a3b8f706b/anak-sekolah-jadi-profesional-kisah-nyata-juara-hsl",
+      "github": "",
+      "tech": ["Vue.js"],
+      "tag": "Client"
+    },
+    {
+      "title": "Dota 2 - Live Screening",
+      "description": "Dota 2 Live Screening match for IESPL",
+      "image": "Dota2Live.jpg",
+      "url": "",
+      "github": "",
+      "tech": ["Vue.js"],
+      "tag": "Client"
+    }
+  ]
+}
