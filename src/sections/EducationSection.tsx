@@ -10,14 +10,14 @@ export function EducationSection({ education }: EducationSectionProps) {
     <Section id="education" comment="My Education">
       <div className="space-y-10">
         {education.map((group) => (
-          <div key={group.school}>
+          <div key={group.degree}>
             <h3 className="text-ink-primary font-semibold text-lg">
               {group.school}
             </h3>
             <p className="text-ink-secondary text-sm flex gap-2 mb-4">
               {group.degree} | {group.graduated}
             </p>
-            <p className="text-ink-secondary text-sm flex gap-2">
+            <p className="text-ink-muted text-sm flex gap-2">
               {group.description}
             </p>
             {/* <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3">

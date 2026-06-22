@@ -31,7 +31,7 @@ const infoNavItems = [
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
-  { id: "blog", label: "Blog" },
+  // { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact me" },
 ];
 
@@ -42,7 +42,7 @@ const workNavItems = [
 ];
 
 const blogNavItems = [
-  { id: "blog-main", label: "Featured" },
+  // { id: "blog-main", label: "Featured" },
   { id: "blog-all", label: "All articles" },
 ];
 
@@ -152,7 +152,7 @@ function InfoView({ resume }: { resume: ResumeData }) {
       <EducationSection education={resume.education} />
       <AwardsSection awards={resume.awards} />
       <TestimonialsSection testimonials={resume.testimonials} />
-      <BlogSection limit={4} />
+      {/* <BlogSection limit={4} /> */}
       <ContactSection main={resume.main} />
     </>
   );
@@ -175,7 +175,7 @@ function BlogView() {
     <>
       <BlogTabHeader />
 
-      <BlogSection id="blog-main" showHeading={false} limit={2} />
+      {/* <BlogSection id="blog-main" showHeading={false} limit={2} /> */}
       <BlogSection id="blog-all" showHeading={false} limit={20} />
     </>
   );

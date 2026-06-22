@@ -6,7 +6,7 @@
     "tagline": "MSIT",
     "shortBio": "Building digital products at large scale. Fullstack, frontend-heavy, UI/UX-minded, with a soft spot for cool systems and street cats.",
     "longBio": "<p>Deployed 3D wayfinding apps to serve thousands of visitors in high-traffic Singapore buildings. Architected a UK trading platform's Frontend with USD124M+ revenues and serving 1.2 million accounts globally. <p>Currently digitizing the largest state-owned bank in Indonesia, live in hundreds of branches, used by thousands of banking staff and customers, cutting fraud by 85%.</p> <p>Outside work: Building tools to help people, writing articles, reading novels, trail running and patting street cats. Aiming to build AI research into production-grade services that move industries forward at scale.</p>",
-    "startedWorking": 2017,
+    "startedWorking": 2018,
     "location": "Jakarta, Indonesia",
     "languages": "English, Indonesian",
     "email": "vionakaleb@gmail.com",
@@ -16,11 +16,7 @@
     "social": [
       { "name": "GitHub", "url": "https://github.com/vionakaleb" },
       { "name": "LinkedIn", "url": "https://www.linkedin.com/in/vionakaleb" },
-      { "name": "Medium", "url": "https://vionakaleb.medium.com/" },
-      {
-        "name": "Behance",
-        "url": "https://behance.net/gallery/71544345/Vio-Web-Portfolio"
-      }
+      { "name": "Medium", "url": "https://vionakaleb.medium.com/" }
     ]
   },
   "stack": [
@@ -67,7 +63,7 @@
   ],
   "awards": {
     "industry": [
-      { "title": "Government Scholarship for Top Graduates", "year": "2017" },
+      { "title": "Government Scholarship for Top Graduates", "year": "2014" },
       { "title": "MSIT, Machine Learning focus", "year": "2026" },
       { "title": "Published on Medium, ML and Software Dev", "year": "2024" }
     ],

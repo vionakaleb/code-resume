@@ -9,9 +9,9 @@ interface TopBarProps {
 }
 
 const tabs: { key: TabKey; label: string }[] = [
-  { key: "info", label: "viona.info" },
-  { key: "work", label: "work.done" },
-  { key: "blog", label: "blog.share" },
+  { key: "info", label: "viona-info.tsx" },
+  { key: "work", label: "work-project.tsx" },
+  { key: "blog", label: "blog-post.tsx" },
 ];
 
 export function TopBar({ activeTab, onTabChange, location, time }: TopBarProps) {
@@ -27,7 +27,7 @@ export function TopBar({ activeTab, onTabChange, location, time }: TopBarProps) 
               aria-selected={isActive}
               type="button"
               onClick={() => onTabChange(tab.key)}
-              className={`relative tab ${isActive ? "tab-active" : ""}`}
+              className={`relative tab py-5 ${isActive ? "tab-active" : ""}`}
             >
               {tab.label}
               {isActive && (
@@ -45,10 +45,10 @@ export function TopBar({ activeTab, onTabChange, location, time }: TopBarProps) 
       <div className="ml-auto flex items-center gap-4 pr-5 text-xs text-ink-secondary">
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-status-live animate-pulse-dot" />
-          Open to new work
+          Open for work/projects
         </span>
-        <span className="hidden md:inline text-ink-muted">{location}</span>
-        <span className="hidden md:inline text-ink-muted">My time: {time}</span>
+        <span className="hidden md:inline text-ink-muted">• {location}</span>
+        <span className="hidden md:inline text-ink-muted">• My time: {time}</span>
       </div>
     </div>
   );

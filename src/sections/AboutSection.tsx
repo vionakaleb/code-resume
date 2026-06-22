@@ -14,7 +14,7 @@ export function AboutSection({ id = "about", main }: AboutSectionProps) {
     <Section id={id} comment="About me section">
       <div className="relative mb-10 select-none">
         <div className="display-font text-[12vw] xl:text-[160px] leading-none text-bg-elev/100 tracking-tighter">
-          SINCE 2017
+          SINCE 2018
         </div>
         <div className="absolute inset-0 flex items-center justify-center text-ink-muted text-xs">
           //////////////////////
