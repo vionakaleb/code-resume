@@ -130,11 +130,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <ArrowRightIcon />
         </span>
       </div>
-      <div className="w-full bg-slate-200 rounded-lg mb-3">
+      <div className="w-full bg-slate-200 rounded-lg mb-3 flex justify-center">
         <img
           src={`/portfolio/${project.image}`}
           alt={project.title}
-          className="h-[230px] max-w-full object-contain shadow-2xl justify-self-center"
+          className="h-[230px] max-w-full object-contain shadow-2xl"
         />
       </div>
       <p className="text-sm text-ink-secondary leading-relaxed mb-4">

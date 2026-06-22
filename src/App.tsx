@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import resumeJson from "@/data/resume.json";
 import type { ResumeData, TabKey } from "@/data/types";
@@ -40,10 +40,16 @@ const workNavItems = [
   { id: "stack", label: "Tech stack" },
 ];
 
-const blogNavItems = [{ id: "blog-all", label: "All articles" }];
+const blogNavItems = [{ id: "blog", label: "All articles" }];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabKey>("info");
+  const getTabFromHash = (): TabKey => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash === "work" || hash === "blog") return hash;
+    return "info";
+  };
+  const [activeTab, setActiveTab] = useState<TabKey>(getTabFromHash);
+
   const mainRef = useRef<HTMLDivElement | null>(null);
   const mainContentRef = useRef<HTMLElement | null>(null);
 
@@ -56,6 +62,17 @@ export default function App() {
   }, [activeTab]);
 
   const activeSection = useActiveSection(mainRef, sectionIds);
+
+  useEffect(() => {
+    const hash = activeTab === "info" ? "" : `#${activeTab}`;
+    window.history.replaceState(null, "", hash || window.location.pathname);
+  }, [activeTab]);
+
+  useEffect(() => {
+    const onHashChange = () => setActiveTab(getTabFromHash());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   const scrollTo = useCallback((id: string) => {
     const el = document.getElementById(id);
@@ -170,7 +187,7 @@ function BlogView() {
     <>
       <BlogTabHeader />
 
-      <BlogSection id="blog-all" showHeading={false} limit={20} />
+      <BlogSection id="blog" showHeading={false} limit={20} />
     </>
   );
 }
