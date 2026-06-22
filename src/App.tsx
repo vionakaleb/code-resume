@@ -27,11 +27,10 @@ const resume = resumeJson as ResumeData;
 const infoNavItems = [
   { id: "hero", label: "Index" },
   { id: "about", label: "About me" },
-  { id: "experience", label: "Experience" },
+  { id: "experience", label: "Careers" },
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
-  // { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact me" },
 ];
 
@@ -41,10 +40,7 @@ const workNavItems = [
   { id: "stack", label: "Tech stack" },
 ];
 
-const blogNavItems = [
-  // { id: "blog-main", label: "Featured" },
-  { id: "blog-all", label: "All articles" },
-];
+const blogNavItems = [{ id: "blog-all", label: "All articles" }];
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabKey>("info");
@@ -152,7 +148,6 @@ function InfoView({ resume }: { resume: ResumeData }) {
       <EducationSection education={resume.education} />
       <AwardsSection awards={resume.awards} />
       <TestimonialsSection testimonials={resume.testimonials} />
-      {/* <BlogSection limit={4} /> */}
       <ContactSection main={resume.main} />
     </>
   );
@@ -175,7 +170,6 @@ function BlogView() {
     <>
       <BlogTabHeader />
 
-      {/* <BlogSection id="blog-main" showHeading={false} limit={2} /> */}
       <BlogSection id="blog-all" showHeading={false} limit={20} />
     </>
   );

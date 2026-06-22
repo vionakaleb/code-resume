@@ -68,6 +68,7 @@ export interface ProjectItem {
   tech: string[];
   url: string;
   tag: string;
+  image: string;
 }
 
 export interface ResumeData {

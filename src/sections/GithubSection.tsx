@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/Section";
 import { ArrowRightIcon, GridIcon, ListIcon } from "@/components/icons";
-import { Loader2 } from "lucide-react";
+import { ExternalLinkIcon, Loader2 } from "lucide-react";
 
 interface GithubSectionProps {
   id?: string;
@@ -29,7 +29,7 @@ type Status = "loading" | "success" | "error";
 
 const GITHUB_USERNAME = "vionakaleb";
 const HIDE_FORKS = true;
-const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=9&sort=updated`;
+const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=10&sort=updated`;
 
 export function GithubSection({ id = "github" }: GithubSectionProps) {
   const [view, setView] = useState<ViewMode>("grid");
@@ -180,6 +180,18 @@ export function GithubSection({ id = "github" }: GithubSectionProps) {
             )}
           </>
         )}
+
+        <div className="mt-6 text-right">
+          <a
+            href="https://github.com/vionakaleb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover transition-colors"
+          >
+            View all repos on Github
+            <ExternalLinkIcon />
+          </a>
+        </div>
       </AnimatePresence>
     </Section>
   );

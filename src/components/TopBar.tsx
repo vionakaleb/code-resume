@@ -10,11 +10,16 @@ interface TopBarProps {
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "info", label: "viona-info.tsx" },
-  { key: "work", label: "work-project.tsx" },
-  { key: "blog", label: "blog-post.tsx" },
+  { key: "work", label: "work-projects.tsx" },
+  { key: "blog", label: "blog-posts.tsx" },
 ];
 
-export function TopBar({ activeTab, onTabChange, location, time }: TopBarProps) {
+export function TopBar({
+  activeTab,
+  onTabChange,
+  location,
+  time,
+}: TopBarProps) {
   return (
     <div className="sticky top-0 z-20 bg-bg-base/95 backdrop-blur border-b border-bg-border flex items-stretch">
       <nav className="flex" role="tablist">
@@ -48,7 +53,9 @@ export function TopBar({ activeTab, onTabChange, location, time }: TopBarProps) 
           Open for work/projects
         </span>
         <span className="hidden md:inline text-ink-muted">• {location}</span>
-        <span className="hidden md:inline text-ink-muted">• My time: {time}</span>
+        <span className="hidden md:inline text-ink-muted">
+          • My time: {time}
+        </span>
       </div>
     </div>
   );

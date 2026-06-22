@@ -11,20 +11,35 @@ interface ProjectSectionProps {
 
 type ViewMode = "grid" | "list";
 
-export function ProjectSection({ id = "project", projects }: ProjectSectionProps) {
+export function ProjectSection({
+  id = "project",
+  projects,
+}: ProjectSectionProps) {
   const [view, setView] = useState<ViewMode>("grid");
 
   return (
     <Section id={id} comment="Featured Projects">
       <div className="flex items-center justify-between mb-8">
         <div className="text-ink-secondary text-sm">
-          Projects(<span className="text-ink-primary">{projects.length.toString().padStart(2, "0")}</span>)
+          Projects(
+          <span className="text-ink-primary">
+            {projects.length.toString().padStart(2, "0")}
+          </span>
+          )
         </div>
         <div className="flex items-center gap-2">
-          <ToggleBtn active={view === "grid"} onClick={() => setView("grid")} aria-label="Grid view">
+          <ToggleBtn
+            active={view === "grid"}
+            onClick={() => setView("grid")}
+            aria-label="Grid view"
+          >
             <GridIcon />
           </ToggleBtn>
-          <ToggleBtn active={view === "list"} onClick={() => setView("list")} aria-label="List view">
+          <ToggleBtn
+            active={view === "list"}
+            onClick={() => setView("list")}
+            aria-label="List view"
+          >
             <ListIcon />
           </ToggleBtn>
         </div>
@@ -107,13 +122,24 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="flex items-start justify-between gap-3 mb-3">
         <div>
           <div className="text-xs text-accent mb-1">{project.tag}</div>
-          <h3 className="text-ink-primary font-semibold text-lg">{project.title}</h3>
+          <h3 className="text-ink-primary font-semibold text-lg">
+            {project.title}
+          </h3>
         </div>
         <span className="text-accent group-hover:translate-x-0.5 transition-transform shrink-0">
           <ArrowRightIcon />
         </span>
       </div>
-      <p className="text-sm text-ink-secondary leading-relaxed mb-4">{project.description}</p>
+      <div className="w-full bg-slate-200 rounded-lg mb-3">
+        <img
+          src={`/portfolio/${project.image}`}
+          alt={project.title}
+          className="h-[230px] max-w-full object-contain shadow-2xl justify-self-center"
+        />
+      </div>
+      <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+        {project.description}
+      </p>
       <div className="flex flex-wrap gap-1.5">
         {project.tech.map((t) => (
           <span
@@ -144,7 +170,9 @@ function ProjectRow({ project, index }: ProjectCardProps) {
           <h3 className="text-ink-primary font-medium">{project.title}</h3>
           <span className="text-xs text-accent">{project.tag}</span>
         </div>
-        <p className="text-sm text-ink-secondary truncate">{project.description}</p>
+        <p className="text-sm text-ink-secondary truncate">
+          {project.description}
+        </p>
       </div>
       <div className="hidden md:flex gap-1.5 shrink-0">
         {project.tech.slice(0, 3).map((t) => (
