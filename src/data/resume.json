@@ -4,6 +4,7 @@
     "fullname": "Viona Zatil Aqmar Kaleb",
     "role": "Software Engineer",
     "tagline": "Viona Kaleb",
+    "username": "vionakaleb",
     "shortBio": "Building digital products at large scale. Fullstack, frontend-heavy, UI/UX-minded, with a soft spot for cool systems and street cats.",
     "longBio": "<p>Deployed 3D wayfinding apps to serve thousands of visitors in high-traffic Singapore buildings. Architected a UK trading platform's Frontend with USD124M+ revenues and serving 1.2 million accounts globally. <p>Currently digitizing the largest state-owned bank in Indonesia, live in hundreds of branches, used by thousands of banking staff and customers, cutting fraud by 85%.</p> <p>Outside work: Building tools to help people, writing articles, reading novels, trail running and patting street cats. Aiming to build AI research into production-grade services that move industries forward at scale.</p>",
     "startedWorking": 2018,
@@ -74,29 +75,33 @@
       },
       { "title": "YourPropFirm USD 124M+ revenue platform", "year": "2023" },
       { "title": "Singapore landmarks wayfinding shipped", "year": "2020" },
-      { "title": "Indonesia's first e-sports platform", "year": "2019" }
+      { "title": "Indonesia's first e-sports platform", "year": "2018" }
     ]
   },
   "testimonials": [
     {
       "quote": "I highly recommend Viona. Having worked closely with her in the Front-end squad for the Smart Branch Bank Mandiri project, I witnessed firsthand her strong technical skills and problem-solving abilities.",
       "author": "Wahyu Fatur Rizki",
-      "role": "Software Engineer at Bank Mandiri"
+      "role": "Software Engineer",
+      "org": "Bank Mandiri"
     },
     {
       "quote": "I had the pleasure of working with Viona during her time at HypeStacks (now known as QuantTechnology). In my experience, Viona’s performance was exceptional; she consistently delivered tasks and projects on time, maintaining an impressive track record with minimal errors or bugs.",
       "author": "Muh. Faldi Taufik",
-      "role": "QA Engineer at Hypestacks"
+      "role": "QA Engineer",
+      "org": "Hypestacks"
     },
     {
       "quote": "I had the privilege of working closely with Viona at  SuperApp (YC W18), where she consistently stood out as one of our strongest front-end (and frontend-focused fullstack) engineers.",
       "author": "Halga Tamici",
-      "role": "Engineering Manager at SuperApp (YC W18)"
+      "role": "Engineering Manager",
+      "org": "SuperApp (YC W18)"
     },
     {
       "quote": "She has a great Front-End skill, able to turn UX design into a good web.  She's also a fun person. Overall, she could be a nice asset for your company.",
       "author": "Alvian Supriadi",
-      "role": "Software Engineer at Yamisok Platform"
+      "role": "Software Engineer",
+      "org": "Yamisok Platform"
     }
   ],
   "education": [

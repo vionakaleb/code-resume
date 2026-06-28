@@ -60,7 +60,7 @@ export function Sidebar({ main, onContactClick, onWorkClick }: SidebarProps) {
       <a
         href={main.resumeUrl}
         download
-        className="inline-flex items-center justify-between gap-2 border border-bg-border hover:border-accent text-ink-primary text-sm px-4 py-3 rounded-md transition-colors mb-auto group"
+        className="inline-flex items-center justify-between gap-2 border border-ink-dim hover:border-accent text-ink-primary text-sm px-4 py-3 rounded-md transition-colors mb-auto group"
       >
         <span>Download CV</span>
         <span className="text-ink-muted group-hover:text-accent transition-colors">
@@ -71,17 +71,17 @@ export function Sidebar({ main, onContactClick, onWorkClick }: SidebarProps) {
       <div className="mt-8 space-y-3">
         <button
           type="button"
-          onClick={onContactClick}
-          className="w-full bg-white text-bg-base text-sm font-semibold py-3 rounded-md hover:bg-ink-primary transition-colors"
+          onClick={onWorkClick}
+          className="w-full border border-ink-dim hover:border-accent hover:text-accent text-ink-primary text-sm font-medium py-3 rounded-md transition-colors"
         >
-          Contact me
+          See Projects
         </button>
         <button
           type="button"
-          onClick={onWorkClick}
-          className="w-full border border-bg-border hover:border-accent text-ink-primary text-sm font-medium py-3 rounded-md transition-colors"
+          onClick={onContactClick}
+          className="w-full bg-accent text-white text-sm font-semibold py-3 rounded-md hover:bg-ink-primary hover:text-accent transition-colors"
         >
-          Work with me
+          Hire Viona
         </button>
       </div>
     </aside>

@@ -3,22 +3,32 @@ import type { WhatIDo } from "@/data/types";
 
 interface EducationSectionProps {
   education: any[];
+  resumeApi: any;
 }
 
-export function EducationSection({ education }: EducationSectionProps) {
+export function EducationSection({
+  education,
+  resumeApi,
+}: EducationSectionProps) {
   return (
     <Section id="education" comment="My Education">
       <div className="space-y-10">
-        {education.map((group) => (
-          <div key={group.degree}>
+        {resumeApi.education.map((group: any, index: number) => (
+          <div key={index}>
             <h3 className="text-ink-primary font-semibold text-lg">
-              {group.school}
+              {group.org}
             </h3>
             <p className="text-ink-secondary text-sm flex gap-2 mb-4">
-              {group.degree} | {group.graduated}
+              {group.title} | {group.dates}
             </p>
             <p className="text-ink-muted text-sm flex gap-2">
-              {group.description}
+              {group.bullets.map((desc: string, index: number) => {
+                return (
+                  <div key={index}>
+                    <span>{desc}</span>
+                  </div>
+                );
+              })}
             </p>
             {/* <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3">
               {group.items.map((item) => (

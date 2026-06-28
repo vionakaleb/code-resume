@@ -48,7 +48,7 @@ export function TopBar({
       </nav>
 
       <div className="ml-auto flex items-center gap-4 pr-5 text-xs text-ink-secondary">
-        <span className="flex items-center gap-2">
+        <span className="hidden md:flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-status-live animate-pulse-dot" />
           Open for work/projects
         </span>

@@ -7,8 +7,13 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
 }
-
-export function Section({ id, comment, children, className = "" }: SectionProps) {
+//
+export function Section({
+  id,
+  comment,
+  children,
+  className = "",
+}: SectionProps) {
   return (
     <motion.section
       id={id}
@@ -18,7 +23,7 @@ export function Section({ id, comment, children, className = "" }: SectionProps)
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`scroll-mt-20 pb-40 ${className}`}
     >
-      <div className="text-sm code-comment mb-6">{`<!-- ${comment} -->`}</div>
+      <div className="text-sm code-comment mb-6 text-green-800">{`/// ${comment}`}</div>
       {children}
     </motion.section>
   );

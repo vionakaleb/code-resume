@@ -1,4 +1,4 @@
-# Viona Kaleb — Portfolio
+# Viona Kaleb - Portfolio
 
 A code-editor-styled portfolio built with React, Vite, TypeScript, Tailwind, and Framer Motion. Modeled after the Jaxon Cruz Framer layout, rethemed to a purple/dark-navy palette.
 
@@ -52,7 +52,7 @@ src/
 
 ## Where to edit
 
-- **Content** lives in `src/data/resume.json`. Change a project title, swap stack levels, update work history — all here.
+- **Content** lives in `src/data/resume.json`. Change a project title, swap stack levels, update work history - all here.
 - **Colors** live in `tailwind.config.js` under `theme.extend.colors`. Tweak `accent.DEFAULT` to shift the purple.
 - **Sections per tab** are wired in `src/App.tsx` inside `InfoView`, `WorkView`, `BlogView`. Reorder freely.
 - **Medium username** is hard-coded at the top of `src/lib/medium.ts`.

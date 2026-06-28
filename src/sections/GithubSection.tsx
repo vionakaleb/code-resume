@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/Section";
 import { ArrowRightIcon, GridIcon, ListIcon } from "@/components/icons";
 import { ExternalLinkIcon, Loader2 } from "lucide-react";
+import { ViewMode } from "@/data/types";
 
 interface GithubSectionProps {
   id?: string;
 }
-
-type ViewMode = "grid" | "list";
 
 interface GithubRepo {
   id: number;
@@ -186,7 +185,7 @@ export function GithubSection({ id = "github" }: GithubSectionProps) {
             href="https://github.com/vionakaleb"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
           >
             View all repos on Github
             <ExternalLinkIcon />
@@ -204,7 +203,12 @@ interface ToggleBtnProps {
   "aria-label": string;
 }
 
-function ToggleBtn({ active, onClick, children, ...rest }: ToggleBtnProps) {
+export function ToggleBtn({
+  active,
+  onClick,
+  children,
+  ...rest
+}: ToggleBtnProps) {
   return (
     <button
       type="button"

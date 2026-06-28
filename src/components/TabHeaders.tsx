@@ -28,7 +28,7 @@ export function BlogTabHeader() {
         transition={{ duration: 0.5 }}
         className="display-font text-5xl md:text-7xl xl:text-8xl leading-[0.95]"
       >
-        <span className="text-ink-primary">My Writing &</span>
+        <span className="text-ink-primary">My Blog &</span>
         <br />
         <span className="text-ink-dim">Articles</span>
       </motion.h1>

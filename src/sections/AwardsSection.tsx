@@ -4,14 +4,22 @@ import type { Awards } from "@/data/types";
 interface AwardsSectionProps {
   id?: string;
   awards: Awards;
+  resumeApi: any;
 }
 
-export function AwardsSection({ id = "awards", awards }: AwardsSectionProps) {
+export function AwardsSection({
+  id = "awards",
+  awards,
+  resumeApi,
+}: AwardsSectionProps) {
   return (
     <Section id={id} comment="Achievements & milestones">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <AwardList title="Industry recognition" items={awards.industry} />
-        <AwardList title="Personal & team milestones" items={awards.personal} />
+        <AwardList
+          title="Personal Recognition"
+          items={resumeApi.achievements}
+        />
+        <AwardList title="Project Milestones" items={awards.personal} />
       </div>
     </Section>
   );
@@ -29,14 +37,14 @@ function AwardList({ title, items }: AwardListProps) {
         {title}
       </h3>
       <ul className="space-y-3">
-        {items.map((item) => (
+        {items.map((item: any) => (
           <li
             key={item.title}
             className="flex items-baseline justify-between gap-3 text-sm"
           >
             <span className="text-ink-secondary">{item.title}</span>
             <span className="text-accent shrink-0 font-medium">
-              {item.year}
+              {item.dates ?? item.year}
             </span>
           </li>
         ))}

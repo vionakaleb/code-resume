@@ -21,6 +21,10 @@ import { ExperienceSection } from "@/sections/ExperienceSection";
 import { useLiveTime } from "@/hooks/useLiveTime";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { GithubSection } from "./sections/GithubSection";
+import { ServicesSection } from "./sections/ServicesSection";
+import { ToolsSection } from "./sections/ToolsSection";
+import { FAQSection } from "./sections/FAQSection";
+import { getPublicResume } from "./api/resume";
 
 const resume = resumeJson as ResumeData;
 
@@ -31,7 +35,12 @@ const infoNavItems = [
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
+
+  { id: "services", label: "Services" },
+  { id: "tools", label: "Tools" },
+
   { id: "contact", label: "Contact me" },
+  { id: "faq", label: "FAQs" },
 ];
 
 const workNavItems = [
@@ -62,6 +71,37 @@ export default function App() {
   }, [activeTab]);
 
   const activeSection = useActiveSection(mainRef, sectionIds);
+
+  const [state, setState] = useState({
+    status: "loading",
+    data: null,
+    error: null,
+  });
+
+  useEffect(() => {
+    let cancelled = false;
+    setState({ status: "loading", data: null, error: null });
+
+    (async () => {
+      try {
+        const result: any = await getPublicResume();
+        if (cancelled) return;
+        const content = result?.content || result;
+        setState({ status: "ready", data: content, error: null });
+      } catch (error: any) {
+        if (cancelled) return;
+        setState({
+          status: error.status === 404 ? "not_found" : "error",
+          data: null,
+          error: error.message || "Could not load profile.",
+        });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const hash = activeTab === "info" ? "" : `#${activeTab}`;
@@ -135,7 +175,14 @@ export default function App() {
                   transition={{ duration: 0.2 }}
                   className="space-y-24"
                 >
-                  {activeTab === "info" && <InfoView resume={resume} />}
+                  {activeTab === "info" && (
+                    <InfoView
+                      resume={resume}
+                      state={state}
+                      onTabChange={handleTabChange}
+                      onContactClick={handleSidebarContact}
+                    />
+                  )}
                   {activeTab === "work" && <WorkView resume={resume} />}
                   {activeTab === "blog" && <BlogView />}
                 </motion.div>
@@ -156,15 +203,49 @@ export default function App() {
   );
 }
 
-function InfoView({ resume }: { resume: ResumeData }) {
+function InfoView({
+  resume,
+  state,
+  onTabChange,
+  onContactClick,
+}: {
+  resume: ResumeData;
+  state: any;
+  onTabChange: (tab: TabKey) => void;
+  onContactClick: () => void;
+}) {
+  if (state.status === "loading") {
+    return (
+      <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
+        Loading profile...
+      </div>
+    );
+  }
+
+  const {
+    data: { resume_content: resumeApi },
+  } = state;
+  console.log(resumeApi, "resumeApi");
+
   return (
     <>
-      <HeroSection main={resume.main} />
-      <AboutSection main={resume.main} />
-      <ExperienceSection work={resume.work} />
-      <EducationSection education={resume.education} />
-      <AwardsSection awards={resume.awards} />
+      <HeroSection
+        main={resume.main}
+        resumeApi={resumeApi}
+        onTabChange={onTabChange}
+        onContactClick={onContactClick}
+      />
+      <AboutSection main={resume.main} resumeApi={resumeApi} />
+
+      <ExperienceSection work={resume.work} resumeApi={resumeApi} />
+      <EducationSection education={resume.education} resumeApi={resumeApi} />
+      <AwardsSection awards={resume.awards} resumeApi={resumeApi} />
       <TestimonialsSection testimonials={resume.testimonials} />
+
+      <ServicesSection />
+      <ToolsSection />
+      <FAQSection />
+
       <ContactSection main={resume.main} />
     </>
   );

@@ -34,7 +34,7 @@ export function TestimonialsSection({
           href="https://www.linkedin.com/in/vionakaleb/details/recommendations/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
         >
           View all testimonials on LinkedIn
           <ExternalLinkIcon />
@@ -57,7 +57,8 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <span className="text-ink-primary font-medium">
           {testimonial.author}
         </span>
-        <span className="text-ink-muted">, {testimonial.role}</span>
+        <span className="text-ink-muted">, {testimonial.role} at </span>
+        <div className="text-accent">{testimonial.org}</div>
       </div>
     </div>
   );

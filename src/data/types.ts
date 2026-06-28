@@ -13,6 +13,7 @@ export interface ResumeMain {
   resumeUrl: string;
   social: SocialLink[];
   image: string;
+  username: string;
 }
 
 export interface SocialLink {
@@ -45,6 +46,7 @@ export interface Testimonial {
   quote: string;
   author: string;
   role: string;
+  org: string;
 }
 
 export interface Education {
@@ -91,3 +93,5 @@ export interface MediumArticle {
 }
 
 export type TabKey = "info" | "work" | "blog";
+
+export type ViewMode = "grid" | "list";

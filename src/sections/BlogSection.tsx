@@ -1,9 +1,16 @@
 import { Section } from "@/components/Section";
 import { useMediumArticles } from "@/hooks/useMediumArticles";
 import { formatArticleDate } from "@/lib/medium";
-import { ArrowRightIcon, ExternalLinkIcon } from "@/components/icons";
-import type { MediumArticle } from "@/data/types";
+import {
+  ArrowRightIcon,
+  ExternalLinkIcon,
+  GridIcon,
+  ListIcon,
+} from "@/components/icons";
+import type { MediumArticle, ViewMode } from "@/data/types";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ToggleBtn } from "./GithubSection";
 
 interface BlogSectionProps {
   id?: string;
@@ -19,13 +26,41 @@ export function BlogSection({
   const { articles, isLoading, error } = useMediumArticles();
   const items = articles.slice(0, limit);
 
+  const [view, setView] = useState<ViewMode>("grid");
+
   return (
-    <Section id={id} comment="Insights & ideas">
+    <Section id={id} comment="Writing engineering, design, and other opinions.">
       {showHeading && (
         <h2 className="display-font text-3xl md:text-5xl mb-10">
           Behind My <span className="text-ink-dim">Coding Desk</span>
         </h2>
       )}
+
+      <div className="flex items-center justify-between mb-8">
+        <div className="text-ink-secondary text-sm">
+          Articles(
+          <span className="text-ink-primary">
+            {articles.length.toString().padStart(2, "0")}
+          </span>
+          )
+        </div>
+        <div className="flex items-center gap-2">
+          <ToggleBtn
+            active={view === "grid"}
+            onClick={() => setView("grid")}
+            aria-label="Grid view"
+          >
+            <GridIcon />
+          </ToggleBtn>
+          <ToggleBtn
+            active={view === "list"}
+            onClick={() => setView("list")}
+            aria-label="List view"
+          >
+            <ListIcon />
+          </ToggleBtn>
+        </div>
+      </div>
 
       {isLoading && <BlogSkeleton count={limit} />}
 
@@ -45,25 +80,73 @@ export function BlogSection({
         </div>
       )}
 
-      {!isLoading && !error && (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {items.map((article, i) => (
-              <ArticleCard key={article.link} article={article} index={i} />
+      {!isLoading && !error ? (
+        view === "grid" ? (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {items.map((article, i) => (
+                <ArticleCard key={article.link} article={article} index={i} />
+              ))}
+            </div>
+            <div className="mt-6 text-right">
+              <a
+                href="https://vionakaleb.medium.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
+              >
+                View all articles on Medium
+                <ExternalLinkIcon />
+              </a>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col gap-3">
+            {articles.map((article, i) => (
+              <motion.a
+                key={article.link}
+                href={article.link}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: i * 0.06 }}
+                className="bg-bg-elev border border-bg-border rounded-xl p-5 flex items-start gap-4 hover:border-accent/40 transition-colors group"
+              >
+                {article.thumbnail && (
+                  <img
+                    src={article.thumbnail}
+                    alt=""
+                    className="w-16 h-16 rounded-lg object-cover flex-shrink-0 bg-bg-panel"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                )}
+                <div className="flex flex-col gap-1 min-w-0">
+                  <h3 className="text-sm font-semibold text-ink-primary group-hover:text-accent transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+                  <p className="text-xs text-ink-muted">
+                    {formatArticleDate(article.pubDate)}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {article.categories.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 py-0.5 bg-bg-panel border border-bg-border rounded text-ink-dim"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.a>
             ))}
           </div>
-          <div className="mt-6 text-right">
-            <a
-              href="https://vionakaleb.medium.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover transition-colors"
-            >
-              View all articles on Medium
-              <ExternalLinkIcon />
-            </a>
-          </div>
-        </>
+        )
+      ) : (
+        ""
       )}
     </Section>
   );
@@ -104,9 +187,21 @@ function ArticleCard({ article, index }: ArticleCardProps) {
         <h3 className="text-ink-primary font-semibold text-lg leading-snug mb-2 group-hover:text-accent transition-colors">
           {article.title}
         </h3>
-        <p className="text-sm text-ink-secondary leading-relaxed mb-4 line-clamp-3 flex-1">
-          {article.description}
+        <p className="text-sm text-ink-secondary mb-4 flex-1">
+          <div className="line-clamp-3 leading-relaxed">
+            {article.description}
+          </div>
         </p>
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {article.categories.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="text-xs px-2 py-0.5 bg-bg-panel border border-bg-border rounded text-ink-dim"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
         <span className="inline-flex items-center gap-2 text-sm text-accent">
           Read full blog
           <ArrowRightIcon />
