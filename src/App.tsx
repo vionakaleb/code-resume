@@ -234,16 +234,16 @@ function InfoView({
     );
   }
 
-  const {
-    data: { resume_content: resumeApi },
-  } = state;
-
   if (!state.data)
     return (
       <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
         No data.
       </div>
     );
+
+  const {
+    data: { resume_content: resumeApi },
+  } = state;
 
   return (
     <>
