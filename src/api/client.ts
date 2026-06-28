@@ -6,7 +6,7 @@ export class ApiError extends Error {
   constructor(
     message: string,
     public status: number,
-    public body: unknown
+    public body: unknown,
   ) {
     super(message);
   }
@@ -43,9 +43,14 @@ interface FetchResult {
   body: unknown;
 }
 
-async function doFetch(path: string, options: RequestInit): Promise<FetchResult> {
+async function doFetch(
+  path: string,
+  options: RequestInit,
+): Promise<FetchResult> {
+  const hasBody = options.body != null;
+
   const headers: HeadersInit = {
-    "Content-Type": "application/json",
+    ...(hasBody ? { "Content-Type": "application/json" } : {}),
     ...(options.headers || {}),
   };
 
@@ -60,7 +65,7 @@ async function doFetch(path: string, options: RequestInit): Promise<FetchResult>
 
 export async function request<T = unknown>(
   path: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
 ): Promise<T> {
   const init: RequestInit = { ...options };
 
@@ -74,7 +79,7 @@ export async function request<T = unknown>(
     throw new ApiError(
       extractMessage(body, `Request failed (${response.status})`),
       response.status,
-      body
+      body,
     );
   }
 
