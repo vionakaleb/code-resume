@@ -86,13 +86,9 @@ export default function App() {
         if (cancelled) return;
         const content = result?.content || result;
         setState({ status: "ready", data: content, error: null });
-      } catch (error: any) {
+      } catch {
         if (cancelled) return;
-        setState({
-          status: error.status === 404 ? "not_found" : "error",
-          data: null,
-          error: error.message || "Could not load profile.",
-        });
+        setState({ status: "ready", data: null, error: null });
       }
     })();
 
@@ -241,9 +237,7 @@ function InfoView({
       </div>
     );
 
-  const {
-    data: { resume_content: resumeApi },
-  } = state;
+  const resumeApi = state.data?.resume_content ?? null;
 
   return (
     <>
@@ -254,16 +248,13 @@ function InfoView({
         onContactClick={onContactClick}
       />
       <AboutSection main={resume.main} resumeApi={resumeApi} />
-
       <ExperienceSection work={resume.work} resumeApi={resumeApi} />
       <EducationSection education={resume.education} resumeApi={resumeApi} />
       <AwardsSection awards={resume.awards} resumeApi={resumeApi} />
       <TestimonialsSection testimonials={resume.testimonials} />
-
       <ServicesSection />
       <ToolsSection />
       <FAQSection />
-
       <ContactSection main={resume.main} />
     </>
   );
