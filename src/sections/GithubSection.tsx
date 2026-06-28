@@ -101,97 +101,103 @@ export function GithubSection({ id = "github" }: GithubSectionProps) {
 
   return (
     <Section id={id} comment="Featured work">
-      <div className="flex items-center justify-between mb-8">
-        <div className="text-ink-secondary text-sm">
-          Repos(
-          <span className="text-ink-primary">
-            {repos.length.toString().padStart(2, "0")}
-          </span>
-          )
-        </div>
-        <div className="flex items-center gap-2">
-          <ToggleBtn
-            active={view === "grid"}
-            onClick={() => setView("grid")}
-            aria-label="Grid view"
-          >
-            <GridIcon />
-          </ToggleBtn>
-          <ToggleBtn
-            active={view === "list"}
-            onClick={() => setView("list")}
-            aria-label="List view"
-          >
-            <ListIcon />
-          </ToggleBtn>
-        </div>
-      </div>
-
-      <AnimatePresence mode="wait">
-        {status === "loading" && (
-          <div className="flex items-center justify-center gap-3 text-gray-400 py-12">
-            <Loader2 className="w-6 h-6 animate-spin" />
-            <span>Loading repositories...</span>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <div className="flex items-center justify-between mb-8">
+          <div className="text-ink-secondary text-sm">
+            Repos(
+            <span className="text-ink-primary">
+              {repos.length.toString().padStart(2, "0")}
+            </span>
+            )
           </div>
-        )}
-
-        {status === "error" && (
-          <div className="max-w-xl mx-auto text-center border border-bg-border text-ink-muted hover:text-ink-secondary rounded-xl p-6">
-            <p className="text-gray-300 mb-2">Could not load repositories.</p>
-            <p className="text-gray-500 text-sm">{errorMessage}</p>
+          <div className="flex items-center gap-2">
+            <ToggleBtn
+              active={view === "grid"}
+              onClick={() => setView("grid")}
+              aria-label="Grid view"
+            >
+              <GridIcon />
+            </ToggleBtn>
+            <ToggleBtn
+              active={view === "list"}
+              onClick={() => setView("list")}
+              aria-label="List view"
+            >
+              <ListIcon />
+            </ToggleBtn>
           </div>
-        )}
-
-        {status === "success" && repos.length === 0 && (
-          <p className="text-center text-gray-400 py-12">
-            No public repositories to show.
-          </p>
-        )}
-
-        {status === "success" && repos.length > 0 && (
-          <>
-            {view === "grid" ? (
-              <motion.div
-                key="grid"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4"
-              >
-                {repos.map((repo, i) => (
-                  <RepoCard key={repo.name} repo={repo} index={i} />
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                key="list"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="divide-y divide-bg-border border-y border-bg-border"
-              >
-                {repos.map((repo, i) => (
-                  <RepoRow key={repo.name} repo={repo} index={i} />
-                ))}
-              </motion.div>
-            )}
-          </>
-        )}
-
-        <div className="mt-6 text-right">
-          <a
-            href="https://github.com/vionakaleb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
-          >
-            View all repos on Github
-            <ExternalLinkIcon />
-          </a>
         </div>
-      </AnimatePresence>
+
+        <AnimatePresence mode="wait">
+          {status === "loading" && (
+            <div className="flex items-center justify-center gap-3 text-gray-400 py-12">
+              <Loader2 className="w-6 h-6 animate-spin" />
+              <span>Loading repositories...</span>
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="max-w-xl mx-auto text-center border border-bg-border text-ink-muted hover:text-ink-secondary rounded-xl p-6">
+              <p className="text-gray-300 mb-2">Could not load repositories.</p>
+              <p className="text-gray-500 text-sm">{errorMessage}</p>
+            </div>
+          )}
+
+          {status === "success" && repos.length === 0 && (
+            <p className="text-center text-gray-400 py-12">
+              No public repositories to show.
+            </p>
+          )}
+
+          {status === "success" && repos.length > 0 && (
+            <>
+              {view === "grid" ? (
+                <motion.div
+                  key="grid"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                >
+                  {repos.map((repo, i) => (
+                    <RepoCard key={repo.name} repo={repo} index={i} />
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="list"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="divide-y divide-bg-border border-y border-bg-border"
+                >
+                  {repos.map((repo, i) => (
+                    <RepoRow key={repo.name} repo={repo} index={i} />
+                  ))}
+                </motion.div>
+              )}
+            </>
+          )}
+
+          <div className="mt-6 text-right">
+            <a
+              href="https://github.com/vionakaleb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
+            >
+              View all repos on Github
+              <ExternalLinkIcon />
+            </a>
+          </div>
+        </AnimatePresence>
+      </motion.div>
     </Section>
   );
 }

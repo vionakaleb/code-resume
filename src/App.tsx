@@ -35,10 +35,8 @@ const infoNavItems = [
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
-
   { id: "services", label: "Services" },
   { id: "tools", label: "Tools" },
-
   { id: "contact", label: "Contact me" },
   { id: "faq", label: "FAQs" },
 ];
@@ -216,8 +214,22 @@ function InfoView({
 }) {
   if (state.status === "loading") {
     return (
-      <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
-        Loading profile...
+      <div className="flex flex-col min-h-[75vh] items-center justify-center gap-4">
+        <div className="text-slate-300">Loading profile...</div>
+        <div className="flex gap-2 items-center">
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:0ms]"
+          ></div>
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:200ms]"
+          ></div>
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:400ms]"
+          ></div>
+        </div>
       </div>
     );
   }
@@ -225,7 +237,13 @@ function InfoView({
   const {
     data: { resume_content: resumeApi },
   } = state;
-  console.log(resumeApi, "resumeApi");
+
+  if (!state.data)
+    return (
+      <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
+        No data.
+      </div>
+    );
 
   return (
     <>

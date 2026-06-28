@@ -10,11 +10,17 @@ interface StackSectionProps {
 export function StackSection({ id = "stack", stack }: StackSectionProps) {
   return (
     <Section id={id} comment="My tech stack">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {stack.map((item, i) => (
-          <StackTile key={item.name} item={item} index={i} />
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {stack.map((item, i) => (
+            <StackTile key={item.name} item={item} index={i} />
+          ))}
+        </div>
+      </motion.div>
     </Section>
   );
 }

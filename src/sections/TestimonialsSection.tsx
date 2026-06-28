@@ -1,6 +1,7 @@
 import { ExternalLinkIcon } from "@/components/icons";
 import { Section } from "@/components/Section";
 import type { Testimonial } from "@/data/types";
+import { motion } from "framer-motion";
 
 interface TestimonialsSectionProps {
   id?: string;
@@ -13,33 +14,39 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
   return (
     <Section id={id} comment="What clients say">
-      <div className="relative mb-10 select-none text-center">
-        <div className="display-font text-[10vw] xl:text-[110px] leading-none text-bg-elev/60 tracking-tighter">
-          WORDS MATTER
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <div className="relative mb-10 select-none text-center">
+          <div className="display-font text-[10vw] xl:text-[110px] leading-none text-bg-elev/60 tracking-tighter">
+            WORDS MATTER
+          </div>
         </div>
-      </div>
 
-      <h2 className="display-font text-3xl md:text-5xl text-center mb-10">
-        Feedback That <span className="text-ink-dim">Fuels Me</span>
-      </h2>
+        <h2 className="display-font text-3xl md:text-5xl text-center mb-10">
+          Feedback That <span className="text-ink-dim">Fuels Me</span>
+        </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {testimonials.map((t) => (
-          <TestimonialCard key={t.author} testimonial={t} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {testimonials.map((t) => (
+            <TestimonialCard key={t.author} testimonial={t} />
+          ))}
+        </div>
 
-      <div className="mt-6 text-right">
-        <a
-          href="https://www.linkedin.com/in/vionakaleb/details/recommendations/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
-        >
-          View all testimonials on LinkedIn
-          <ExternalLinkIcon />
-        </a>
-      </div>
+        <div className="mt-6 text-right">
+          <a
+            href="https://www.linkedin.com/in/vionakaleb/details/recommendations/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-green-800 hover:text-green-400 transition-colors"
+          >
+            View all testimonials on LinkedIn
+            <ExternalLinkIcon />
+          </a>
+        </div>
+      </motion.div>
     </Section>
   );
 }

@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
 import type { Awards } from "@/data/types";
+import { motion } from "framer-motion";
 
 interface AwardsSectionProps {
   id?: string;
@@ -14,13 +15,19 @@ export function AwardsSection({
 }: AwardsSectionProps) {
   return (
     <Section id={id} comment="Achievements & milestones">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <AwardList
-          title="Personal Recognition"
-          items={resumeApi.achievements}
-        />
-        <AwardList title="Project Milestones" items={awards.personal} />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <AwardList
+            title="Personal Recognition"
+            items={resumeApi.achievements}
+          />
+          <AwardList title="Project Milestones" items={awards.personal} />
+        </div>
+      </motion.div>
     </Section>
   );
 }
