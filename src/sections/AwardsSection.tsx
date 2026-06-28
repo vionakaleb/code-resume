@@ -14,7 +14,7 @@ export function AwardsSection({
   resumeApi,
 }: AwardsSectionProps) {
   return (
-    <Section id={id} comment="Achievements & milestones">
+    <Section id={id} comment="The Awards">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

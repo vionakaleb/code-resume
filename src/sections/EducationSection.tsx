@@ -12,7 +12,7 @@ export function EducationSection({
   resumeApi,
 }: EducationSectionProps) {
   return (
-    <Section id="education" comment="My Education">
+    <Section id="education" comment="The Education">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

@@ -17,7 +17,7 @@ export function FAQSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <SectionLabel label="FAQs" />
+        <SectionLabel label="The FAQs" />
 
         <h2 className="text-2xl font-bold text-ink-primary mb-8">
           Questions?{" "}

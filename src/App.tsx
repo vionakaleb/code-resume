@@ -30,24 +30,24 @@ const resume = resumeJson as ResumeData;
 
 const infoNavItems = [
   { id: "hero", label: "Index" },
-  { id: "about", label: "About me" },
+  { id: "about", label: "About Me" },
   { id: "experience", label: "Careers" },
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
   { id: "services", label: "Services" },
   { id: "tools", label: "Tools" },
-  { id: "contact", label: "Contact me" },
   { id: "faq", label: "FAQs" },
+  { id: "contact", label: "Contact" },
 ];
 
 const workNavItems = [
   { id: "project", label: "Projects" },
   { id: "github", label: "Github" },
-  { id: "stack", label: "Tech stack" },
+  { id: "stack", label: "Tech Stack" },
 ];
 
-const blogNavItems = [{ id: "blog", label: "All articles" }];
+const blogNavItems = [{ id: "blog", label: "All Articles" }];
 
 export default function App() {
   const getTabFromHash = (): TabKey => {

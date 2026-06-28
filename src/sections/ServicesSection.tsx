@@ -10,10 +10,10 @@ export function ServicesSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <SectionLabel label="Services I provide" />
+        <SectionLabel label="The Services" />
 
         <h2 className="text-2xl font-bold text-ink-primary mb-8">
-          Service <span className="text-accent">I Provide</span>
+          Service <span className="text-accent italic">I Provide.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

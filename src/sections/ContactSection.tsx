@@ -25,7 +25,7 @@ export function ContactSection({ id = "contact", main }: ContactSectionProps) {
   };
 
   return (
-    <Section id={id} comment="Get in touch">
+    <Section id={id} comment="The Contact">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

@@ -10,10 +10,10 @@ export function ToolsSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <SectionLabel label="My favorite tools" />
+        <SectionLabel label="The Tools" />
 
         <h2 className="text-2xl font-bold text-ink-primary mb-8">
-          Tools Behind <span className="text-accent">My Code</span>
+          Tools Behind <span className="text-accent italic">My Code.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

@@ -13,7 +13,7 @@ export function TestimonialsSection({
   testimonials,
 }: TestimonialsSectionProps) {
   return (
-    <Section id={id} comment="What clients say">
+    <Section id={id} comment="The testimonials">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

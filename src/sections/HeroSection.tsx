@@ -25,7 +25,7 @@ export function HeroSection({
   onContactClick,
 }: HeroSectionProps) {
   return (
-    <Section id={id} comment="Hero section">
+    <Section id={id} comment="Hero Section">
       <motion.h1
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
