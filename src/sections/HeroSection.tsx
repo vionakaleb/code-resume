@@ -50,7 +50,7 @@ export function HeroSection({
         <a
           href={main.resumeUrl}
           download
-          className="flex items-center justify-between gap-1 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors"
+          className="flex items-center justify-between gap-1 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer"
         >
           <span>CV</span>
           <span className="text-ink-muted group-hover:text-accent transition-colors">
@@ -60,13 +60,13 @@ export function HeroSection({
         <a
           href="#work"
           onClick={(e) => onTabChange("work")}
-          className="px-4 py-3 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors"
+          className="px-4 py-3 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer"
         >
           See Projects
         </a>
         <a
           onClick={onContactClick}
-          className="px-4 py-3 bg-accent text-white text-xs font-semibold rounded hover:bg-accent-hover transition-colors"
+          className="px-4 py-3 bg-accent text-white text-xs font-semibold rounded hover:bg-accent-hover transition-colors cursor-pointer"
         >
           Hire Viona
         </a>
