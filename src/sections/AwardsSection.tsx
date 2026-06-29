@@ -23,7 +23,7 @@ export function AwardsSection({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <AwardList
             title="Personal Recognition"
-            items={resumeApi.achievements}
+            items={resumeApi?.achievements ?? awards.industry}
           />
           <AwardList title="Project Milestones" items={awards.personal} />
         </div>
@@ -51,7 +51,7 @@ function AwardList({ title, items }: AwardListProps) {
           >
             <span className="text-ink-secondary">{item.title}</span>
             <span className="text-accent shrink-0 font-medium">
-              {item.dates ?? item.year}
+              {item?.dates ?? item.year}
             </span>
           </li>
         ))}

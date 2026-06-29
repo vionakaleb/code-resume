@@ -230,12 +230,12 @@ function InfoView({
     );
   }
 
-  if (!state.data)
-    return (
-      <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
-        No data.
-      </div>
-    );
+  // if (!state.data)
+  // return (
+  //   <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
+  //     No data.
+  //   </div>
+  // );
 
   const resumeApi = state.data?.resume_content ?? null;
 

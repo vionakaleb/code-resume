@@ -112,7 +112,9 @@ export function AboutSection({
                 of building digital products at large scale.
               </p>
               <div
-                dangerouslySetInnerHTML={{ __html: resumeApi.summary }}
+                dangerouslySetInnerHTML={{
+                  __html: resumeApi?.summary ?? main.longBio,
+                }}
               ></div>
             </div>
 
@@ -127,11 +129,11 @@ export function AboutSection({
           <div className="panel p-4 aspect-[1/1] flex flex-col">
             <img
               src={main.image}
-              alt={resumeApi.name}
+              alt={resumeApi?.name ?? main.fullname}
               className="flex-1 rounded bg-gradient-to-br from-accent/30 via-bg-elev to-bg-base flex items-center justify-center text-6xl text-white/80 font-bold"
             />
             <div className="pt-3 text-xs text-ink-muted text-center">
-              {resumeApi.name}
+              {resumeApi?.name ?? main.fullname}
             </div>
           </div>
         </div>

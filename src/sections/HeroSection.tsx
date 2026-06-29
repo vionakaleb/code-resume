@@ -32,9 +32,11 @@ export function HeroSection({
         transition={{ duration: 0.6, delay: 0.1 }}
         className="display-font text-5xl md:text-7xl xl:text-8xl leading-[0.95] mb-8"
       >
-        <span className="text-ink-primary">{resumeApi.headline}</span>
+        <span className="text-ink-primary">
+          {resumeApi?.headline ?? main.role}
+        </span>
         <br />
-        <span className="text-ink-dim">{resumeApi.name}</span>
+        <span className="text-ink-dim">{resumeApi?.name ?? main.tagline}</span>
       </motion.h1>
 
       <motion.p
