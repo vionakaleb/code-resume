@@ -30,6 +30,7 @@ export interface WhatIDo {
 export interface StackItem {
   name: string;
   level: number;
+  type: string;
 }
 
 export interface AwardItem {

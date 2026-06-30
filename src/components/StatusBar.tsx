@@ -11,15 +11,17 @@ export function StatusBar({ social }: StatusBarProps) {
         Delivered impact across banking, trading, e-commerce, and wayfinding.
       </div>
       <div className="flex items-center gap-3">
-        {social.map((s) => (
+        {social?.map((s, i) => (
           <a
-            key={s.name}
+            key={i}
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-ink-secondary transition-colors"
           >
-            {s.name}
+            <span>
+              {i !== 0 && "•"} {s.name}
+            </span>
           </a>
         ))}
       </div>

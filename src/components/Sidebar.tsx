@@ -7,16 +7,47 @@ import {
   MailIcon,
   PhoneIcon,
   DownloadIcon,
+  LinkedinIcon,
 } from "@/components/icons";
 import { getYearExperience } from "@/hooks/useLiveTime";
+import { Github, Linkedin } from "lucide-react";
 
 interface SidebarProps {
   main: ResumeMain;
+  resumeApi: any;
+  isLoading: boolean;
   onContactClick: () => void;
   onWorkClick: () => void;
 }
 
-export function Sidebar({ main, onContactClick, onWorkClick }: SidebarProps) {
+export function Sidebar({
+  main,
+  resumeApi,
+  isLoading,
+  onContactClick,
+  onWorkClick,
+}: SidebarProps) {
+  if (isLoading) {
+    return (
+      <div className="flex flex-col min-w-[340px] min-h-[75vh] items-center justify-center gap-4">
+        <div className="flex gap-2 items-center">
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:0ms]"
+          ></div>
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:200ms]"
+          ></div>
+          <div
+            className="w-2.5 h-2.5 rounded-full bg-accent
+    animate-bounce [animation-delay:400ms]"
+          ></div>
+        </div>
+      </div>
+    );
+  }
+  console.log(resumeApi, "resumeApi");
   return (
     <aside className="hidden lg:flex w-[300px] xl:w-[340px] shrink-0 bg-bg-base border-r border-bg-border flex-col px-6 py-8">
       <div className="text-xs text-ink-muted mb-8">Welcome to my world!</div>
@@ -33,8 +64,12 @@ export function Sidebar({ main, onContactClick, onWorkClick }: SidebarProps) {
           className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent to-accent-hover flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg shadow-accent/20"
         />
         <div>
-          <div className="font-semibold text-ink-primary">{main.name}</div>
-          <div className="text-sm text-ink-secondary">{main.role}</div>
+          <div className="font-semibold text-ink-primary">
+            {resumeApi?.name ?? main.name}
+          </div>
+          <div className="text-sm text-ink-secondary">
+            {resumeApi?.headline ?? main.role}
+          </div>
         </div>
       </motion.div>
 
@@ -45,16 +80,47 @@ export function Sidebar({ main, onContactClick, onWorkClick }: SidebarProps) {
       <div className="space-y-4 text-sm text-ink-secondary mb-8">
         <InfoRow
           icon={<BriefcaseIcon />}
-          text={`${getYearExperience(main.startedWorking)} years of experience`}
+          text={`${getYearExperience(main.startedWorking)}+ YOE`}
         />
-        <InfoRow icon={<MapPinIcon />} text={main.location} />
-        <InfoRow icon={<LanguagesIcon />} text={main.languages} />
+        <InfoRow
+          icon={<MapPinIcon />}
+          text={resumeApi?.location ?? main.location}
+        />
+        {/* <InfoRow icon={<LanguagesIcon />} text={main.languages} /> */}
         <InfoRow
           icon={<MailIcon />}
-          text={main.email}
+          text={resumeApi?.email ?? main.email}
           href={`mailto:${main.email}`}
         />
-        {main.phone && <InfoRow icon={<PhoneIcon />} text={main.phone} />}
+        {(resumeApi?.phone || main.phone) && (
+          <InfoRow icon={<PhoneIcon />} text={resumeApi?.phone ?? main.phone} />
+        )}
+        {main.social?.find((soc) => soc?.name.toLowerCase() === "linkedin") && (
+          <InfoRow
+            icon={<Linkedin className="h-4 w-4" />}
+            text={
+              main.social?.find((soc) => soc?.name.toLowerCase() === "linkedin")
+                ?.name ?? ""
+            }
+            href={
+              main.social?.find((soc) => soc?.name.toLowerCase() === "linkedin")
+                ?.url
+            }
+          />
+        )}
+        {main.social?.find((soc) => soc?.name.toLowerCase() === "github") && (
+          <InfoRow
+            icon={<Github className="h-4 w-4" />}
+            text={
+              main.social?.find((soc) => soc?.name.toLowerCase() === "github")
+                ?.name ?? ""
+            }
+            href={
+              main.social?.find((soc) => soc?.name.toLowerCase() === "github")
+                ?.url
+            }
+          />
+        )}
       </div>
 
       <a
@@ -103,7 +169,7 @@ function InfoRow({ icon, text, href }: InfoRowProps) {
   );
   if (href) {
     return (
-      <a href={href} className="block">
+      <a href={href} target="_blank" className="block">
         {content}
       </a>
     );

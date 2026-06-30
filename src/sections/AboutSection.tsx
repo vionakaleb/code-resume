@@ -4,7 +4,7 @@ import { PROFILE } from "../data/resume";
 import { ResumeMain, SocialLink } from "@/data/types";
 import { MediumIcon } from "@/components/icons";
 import { getYearExperience } from "@/hooks/useLiveTime";
-import { Github, Linkedin } from "lucide-react";
+import { Github, GlobeIcon, Linkedin } from "lucide-react";
 import { Section } from "@/components/Section";
 
 interface AboutSectionProps {
@@ -117,13 +117,6 @@ export function AboutSection({
                 }}
               ></div>
             </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
-              <span className="text-ink-muted">Find me:</span>
-              {main.social.map((s) => (
-                <SocialPill key={s.name} social={s} />
-              ))}
-            </div>
           </div>
 
           <div className="panel p-4 aspect-[1/1] flex flex-col">
@@ -160,10 +153,10 @@ export function AboutSection({
   );
 }
 
-function SocialPill({ social }: { social: SocialLink }) {
+export function SocialPill({ social }: { social: SocialLink }) {
   return (
     <a
-      href={social.url}
+      href={social?.url}
       target="_blank"
       rel="noopener noreferrer"
       className="flex border border-bg-border hover:border-accent text-ink-secondary hover:text-ink-primary px-3 py-1 rounded-full transition-colors"
@@ -174,6 +167,8 @@ function SocialPill({ social }: { social: SocialLink }) {
         <Linkedin className="w-5 h-5 mr-1" />
       ) : social.name.toLowerCase() === "medium" ? (
         <MediumIcon className="w-5 h-5 mr-1" />
+      ) : social.name.toLowerCase() === "website" ? (
+        <GlobeIcon className="w-5 h-5 mr-1" />
       ) : (
         <span className="w-5 h-5 mr-1">Bē</span>
       )}

@@ -70,7 +70,7 @@ export default function App() {
 
   const activeSection = useActiveSection(mainRef, sectionIds);
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     status: "loading",
     data: null,
     error: null,
@@ -137,10 +137,21 @@ export default function App() {
         ? workNavItems
         : blogNavItems;
 
+  // if (!state.data)
+  // return (
+  //   <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
+  //     No data.
+  //   </div>
+  // );
+
+  const resumeApi = state.data?.resume_content ?? null;
+
   return (
     <div className="h-screen flex bg-bg-base text-ink-primary overflow-hidden">
       <Sidebar
         main={resume.main}
+        resumeApi={resumeApi}
+        isLoading={state?.status === "loading"}
         onContactClick={handleSidebarContact}
         onWorkClick={handleSidebarWork}
       />
@@ -172,6 +183,7 @@ export default function App() {
                   {activeTab === "info" && (
                     <InfoView
                       resume={resume}
+                      resumeApi={resumeApi}
                       state={state}
                       onTabChange={handleTabChange}
                       onContactClick={handleSidebarContact}
@@ -200,11 +212,13 @@ export default function App() {
 function InfoView({
   resume,
   state,
+  resumeApi,
   onTabChange,
   onContactClick,
 }: {
   resume: ResumeData;
   state: any;
+  resumeApi: any;
   onTabChange: (tab: TabKey) => void;
   onContactClick: () => void;
 }) {
@@ -230,15 +244,6 @@ function InfoView({
     );
   }
 
-  // if (!state.data)
-  // return (
-  //   <div className="flex min-h-[75vh] items-center justify-center text-slate-300">
-  //     No data.
-  //   </div>
-  // );
-
-  const resumeApi = state.data?.resume_content ?? null;
-
   return (
     <>
       <HeroSection
@@ -253,7 +258,7 @@ function InfoView({
       <AwardsSection awards={resume.awards} resumeApi={resumeApi} />
       <TestimonialsSection testimonials={resume.testimonials} />
       <ServicesSection />
-      <ToolsSection />
+      <ToolsSection stack={resume.stack} />
       <FAQSection />
       <ContactSection main={resume.main} />
     </>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import type { ResumeMain, TabKey } from "@/data/types";
 import { DownloadIcon } from "lucide-react";
+import { SocialPill } from "./AboutSection";
 
 interface HeroSectionProps {
   id?: string;
@@ -48,16 +49,12 @@ export function HeroSection({
         {main.shortBio}
       </motion.p>
 
-      <motion.div {...fadeUp(0.5)} className="flex items-center gap-3">
+      <motion.div {...fadeUp(0.5)} className="flex items-center gap-3 mb-6">
         <a
-          href={main.resumeUrl}
-          download
-          className="flex items-center justify-between gap-1 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer"
+          onClick={onContactClick}
+          className="px-4 py-3 bg-accent text-white text-xs font-semibold rounded hover:bg-accent-hover transition-colors cursor-pointer"
         >
-          <span>CV</span>
-          <span className="text-ink-muted group-hover:text-accent transition-colors">
-            <DownloadIcon height={16} />
-          </span>
+          Hire Viona
         </a>
         <a
           href="#work"
@@ -67,11 +64,24 @@ export function HeroSection({
           See Projects
         </a>
         <a
-          onClick={onContactClick}
-          className="px-4 py-3 bg-accent text-white text-xs font-semibold rounded hover:bg-accent-hover transition-colors cursor-pointer"
+          href={main.resumeUrl}
+          download
+          className="flex items-center justify-between gap-2 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer"
         >
-          Hire Viona
+          <span className="text-ink-muted group-hover:text-accent transition-colors">
+            <DownloadIcon height={16} width={16} />
+          </span>
+          <span>CV</span>
         </a>
+      </motion.div>
+
+      <motion.div {...fadeUp(0.5)} className="flex items-center gap-3">
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
+          <span className="text-ink-muted">Find me:</span>
+          {main.social.map((s) => (
+            <SocialPill key={s.name} social={s} />
+          ))}
+        </div>
       </motion.div>
     </Section>
   );

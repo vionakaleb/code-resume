@@ -12,54 +12,115 @@
     "languages": "English, Indonesian",
     "email": "vionakaleb@gmail.com",
     "phone": "",
-    "resumeUrl": "/Frontend Resume - Viona Z. A. Kaleb.pdf",
+    "resumeUrl": "/Software Engineer - Viona Kaleb.pdf",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQFWtwDT_KfW8A/profile-displayphoto-crop_800_800/B56Z6tesfrI8AI-/0/1781026966395?e=1783555200&v=beta&t=QHHk6_L7rO6y46KP0umc39JWRGcrXclPk633uNE2drg",
     "social": [
+      { "name": "Website", "url": "https://viona-kaleb.com" },
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/vionakaleb" },
       { "name": "GitHub", "url": "https://github.com/vionakaleb" },
-      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/vionakaleb" },
       { "name": "Medium", "url": "https://vionakaleb.medium.com/" }
     ]
   },
   "stack": [
     {
       "name": "Typescript",
-      "level": 80
+      "level": 90,
+      "type": "Language"
     },
     {
-      "name": "React",
-      "level": 80
+      "name": "React/Next.js",
+      "level": 90,
+      "type": "Framework"
     },
     {
       "name": "Angular",
-      "level": 80
+      "level": 90,
+      "type": "Framework"
     },
     {
       "name": "Vue",
-      "level": 70
+      "level": 80,
+      "type": "Framework"
     },
     {
-      "name": "Next.js",
-      "level": 70
+      "name": "Python",
+      "level": 70,
+      "type": "Language"
     },
     {
-      "name": "Redux/Hooks",
-      "level": 80
+      "name": "FastAPI",
+      "level": 60,
+      "type": "Backend"
     },
     {
-      "name": "RTK/React Query",
-      "level": 70
+      "name": "Node.js",
+      "level": 70,
+      "type": "Backend"
     },
     {
-      "name": "GraphQL",
-      "level": 70
+      "name": "Redux, RTK, React Query",
+      "level": 85,
+      "type": "State Management"
+    },
+    {
+      "name": "RxJs, NgRx",
+      "level": 80,
+      "type": "State Management"
+    },
+    {
+      "name": "Vuex, Pinia",
+      "level": 75,
+      "type": "State Management"
+    },
+    {
+      "name": "GraphQL, SQL",
+      "level": 80,
+      "type": "Query Language"
+    },
+    {
+      "name": "PostgreSQL, Supabase",
+      "level": 80,
+      "type": "Database"
     },
     {
       "name": "Firebase",
-      "level": 70
+      "level": 80,
+      "type": "Database"
     },
     {
-      "name": "Tailwind/SCSS",
-      "level": 90
+      "name": "DynamoDB",
+      "level": 70,
+      "type": "Database"
+    },
+    {
+      "name": "Github Actions",
+      "level": 70,
+      "type": "CI/CD"
+    },
+    {
+      "name": "Docker",
+      "level": 70,
+      "type": "CI/CD"
+    },
+    {
+      "name": "AWS",
+      "level": 70,
+      "type": "Cloud"
+    },
+    {
+      "name": "Tailwind, SCSS",
+      "level": 90,
+      "type": "Styling"
+    },
+    {
+      "name": "Framer Motion",
+      "level": 80,
+      "type": "Animation"
+    },
+    {
+      "name": "Figma",
+      "level": 80,
+      "type": "UI/UX"
     }
   ],
   "awards": {
@@ -116,7 +177,7 @@
       "school": "President University",
       "degree": "Bachelor of Science in IT (BSIT)",
       "graduated": "2021",
-      "description": "Awarded a Bachelor's scholarship for being one of the top graduates, funded by the government. Thesis on breast cancer prediction using k-NN, reaching ~96.49% accuracy at K=17.",
+      "description": "Awarded a Bachelor's scholarship for being one of the top graduates, funded by the government. Thesis on breast cancer prediction using KNN, reaching ~96.49% accuracy at K=17.",
       "logo": "campus.png"
     }
   ],
