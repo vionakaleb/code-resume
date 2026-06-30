@@ -58,7 +58,7 @@
       "type": "Backend"
     },
     {
-      "name": "Redux, RTK, React Query",
+      "name": "Zustand, RTK, TanStack Query",
       "level": 85,
       "type": "State Management"
     },
@@ -71,6 +71,11 @@
       "name": "Vuex, Pinia",
       "level": 75,
       "type": "State Management"
+    },
+    {
+      "name": "Jest, RTL",
+      "level": 80,
+      "type": "Unit Test"
     },
     {
       "name": "Wordpress",
@@ -111,6 +116,11 @@
       "name": "AWS",
       "level": 70,
       "type": "Cloud"
+    },
+    {
+      "name": "Sentry, Kibana",
+      "level": 70,
+      "type": "Error-Logging"
     },
     {
       "name": "Tailwind, SCSS",
