@@ -119,7 +119,7 @@
     },
     {
       "name": "Sentry, Kibana",
-      "level": 70,
+      "level": 80,
       "type": "Error-Logging"
     },
     {
