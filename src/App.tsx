@@ -31,7 +31,7 @@ const resume = resumeJson as ResumeData;
 const infoNavItems = [
   { id: "hero", label: "Index" },
   { id: "about", label: "About Me" },
-  { id: "experience", label: "Careers" },
+  { id: "experience", label: "Career" },
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },

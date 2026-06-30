@@ -33,7 +33,7 @@ export function ExperienceSection({
   // const desc = (item: any) => (isFromApi ? item?.bullets : item?.descriptions);
 
   return (
-    <Section id={id} comment="The Careers">
+    <Section id={id} comment="My Career">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
