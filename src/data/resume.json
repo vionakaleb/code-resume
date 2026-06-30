@@ -73,6 +73,11 @@
       "type": "State Management"
     },
     {
+      "name": "Wordpress",
+      "level": 70,
+      "type": "CMS"
+    },
+    {
       "name": "GraphQL, SQL",
       "level": 80,
       "type": "Query Language"

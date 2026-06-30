@@ -5,16 +5,10 @@ export const PROFILE = {
 
 export const SERVICES = [
   {
-    icon: "🎨",
-    title: "UI / UX Design",
-    description:
-      "End-to-end design from wireframes to high-fidelity Figma prototypes. I handle both design and build, so nothing gets lost in translation.",
-  },
-  {
     icon: "💻",
     title: "Frontend Engineering",
     description:
-      "Production-grade SPAs and micro-frontends using React, Angular, and Vue. Built for scale - fast, accessible, and maintainable.",
+      "Production-grade PWA, SPAs and micro-frontends using React/Next.js, Angular, and Vue. Built for scale. Fast, accessible, and maintainable.",
   },
   {
     icon: "🔗",
@@ -22,17 +16,12 @@ export const SERVICES = [
     description:
       "REST and GraphQL API integration, headless CMS setups (WordPress + WPGraphQL), and serverless backend wiring with Node.js and Supabase.",
   },
-];
-
-export const TOOLS = [
-  { name: "React / Next.js", proficiency: 95, category: "Framework" },
-  { name: "TypeScript", proficiency: 92, category: "Language" },
-  { name: "Angular", proficiency: 90, category: "Framework" },
-  { name: "Tailwind CSS", proficiency: 95, category: "Styling" },
-  { name: "Framer Motion", proficiency: 85, category: "Animation" },
-  { name: "Figma", proficiency: 88, category: "Design" },
-  { name: "Node.js", proficiency: 78, category: "Backend" },
-  { name: "PostgreSQL / Supabase", proficiency: 75, category: "Database" },
+  {
+    icon: "🎨",
+    title: "UI / UX Design",
+    description:
+      "End-to-end design from wireframes to high-fidelity Figma prototypes. I handle both design and build, so nothing gets lost in translation.",
+  },
 ];
 
 export const FAQS = [

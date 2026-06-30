@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { TOOLS } from "../data/resume";
 import { SectionLabel } from "./AboutSection";
 
 export function ToolsSection({ id = "stack", stack }: any) {
