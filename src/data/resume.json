@@ -200,6 +200,7 @@
     {
       "company": "Bank Mandiri",
       "title": "Software Engineer",
+      "location": "Jakarta, Indonesia",
       "years": "Jan 2024 - Present",
       "descriptions": [
         "Built features for Smart Branch by Mandiri, a digital banking platform live across 2,000+ branches with 30 million users nationwide, contributing to an 85% reduction in fraud incidents.",
@@ -213,6 +214,7 @@
     {
       "company": "Hypestacks",
       "title": "Frontend Engineer",
+      "location": "London, UK",
       "years": "Jan 2023 - Jan 2024",
       "descriptions": [
         "Architected and built the frontend stack from scratch for YourPropFirm, a B2B real-time trading analytics platform with USD 124M+ revenues, serving 1.2M+ trading accounts and 65+ prop firm clients globally.",
@@ -225,6 +227,7 @@
     {
       "company": "SuperApp (YC W18)",
       "title": "Frontend Engineer",
+      "location": "Jakarta, Indonesia",
       "years": "Jan 2021 - Jan 2023",
       "descriptions": [
         "Owned full frontend delivery across multiple product lines for a social commerce and hyper-local supply chain platform serving Indonesia's retail ecosystem.",
@@ -238,6 +241,7 @@
     {
       "company": "Adactive Asia",
       "title": "Front-End Developer",
+      "location": "Singapore",
       "years": "Jan 2020 - Jan 2021",
       "descriptions": [
         "Deployed 3D wayfinding systems to major Singapore landmarks including the Supreme Court, Republic Plaza, and Woods Square, serving thousands of visitors in high-traffic government and commercial buildings.",
@@ -250,6 +254,7 @@
     {
       "company": "Yamisok Platform",
       "title": "Frontend Engineer",
+      "location": "Tangerang, Indonesia",
       "years": "Jan 2018 - Jan 2020",
       "descriptions": [
         "Built Indonesia's first integrated e-sports community and tournament platform, connecting players with tournament organizers and sponsors. Supported partnerships with Tokopedia, JD.ID, and Firstmedia.",
