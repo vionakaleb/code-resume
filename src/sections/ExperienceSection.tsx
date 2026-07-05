@@ -57,7 +57,7 @@ export function ExperienceSection({
                 <span className="text-ink-muted text-sm">{item?.title}</span>
               </div>
               <div className="text-xs text-ink-muted mb-3">
-                {item?.location ? `${item?.location} |` : ""}
+                {item?.location ? `${item?.location} | ` : ""}
                 {item?.dates ?? item?.years}
               </div>
 
