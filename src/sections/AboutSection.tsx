@@ -104,12 +104,14 @@ export function AboutSection({
             </h2>
             <div className="space-y-4 text-ink-secondary leading-relaxed">
               <p>
-                I'm a <span className="code-highlight">Software Engineer</span>{" "}
-                with{" "}
+                I'm a Fullstack, Frontend-heavy{" "}
+                <span className="code-highlight">Software Engineer</span>, with{" "}
                 <span className="code-highlight">
                   {getYearExperience(main.startedWorking)} years
                 </span>{" "}
-                of building digital products at large scale.
+                shipping scalable products. Master's in CS, mentor on
+                Indonesia's leading mentoring platform. Loves writing, exploring
+                new tech and street cats 🐈
               </p>
               <div
                 dangerouslySetInnerHTML={{

@@ -10,7 +10,7 @@ import {
   LinkedinIcon,
 } from "@/components/icons";
 import { getYearExperience } from "@/hooks/useLiveTime";
-import { Github, Linkedin } from "lucide-react";
+import { Github, GlobeIcon, Linkedin } from "lucide-react";
 
 interface SidebarProps {
   main: ResumeMain;
@@ -29,7 +29,7 @@ export function Sidebar({
 }: SidebarProps) {
   if (isLoading) {
     return (
-      <div className="flex flex-col min-w-[340px] min-h-[75vh] items-center justify-center gap-4">
+      <div className="hidden lg:flex w-[300px] xl:w-[340px] flex-col min-w-[340px] min-h-[75vh] items-center justify-center gap-4">
         <div className="flex gap-2 items-center">
           <div
             className="w-2.5 h-2.5 rounded-full bg-accent
@@ -73,7 +73,7 @@ export function Sidebar({
         </div>
       </motion.div>
 
-      <p className="text-sm text-ink-secondary leading-relaxed mb-8">
+      <p className="text-[0.8rem] text-ink-secondary leading-relaxed mb-8">
         {main.shortBio}
       </p>
 
@@ -86,12 +86,22 @@ export function Sidebar({
           icon={<MapPinIcon />}
           text={resumeApi?.location ?? main.location}
         />
+        {main.social?.find((soc) => soc?.name.toLowerCase() === "website") && (
+          <InfoRow
+            icon={<GlobeIcon className="h-4 w-4" />}
+            text={"viona-kaleb.com"}
+            href={
+              main.social?.find((soc) => soc?.name.toLowerCase() === "website")
+                ?.url
+            }
+          />
+        )}
         {/* <InfoRow icon={<LanguagesIcon />} text={main.languages} /> */}
-        <InfoRow
+        {/* <InfoRow
           icon={<MailIcon />}
           text={resumeApi?.email ?? main.email}
           href={`mailto:${main.email}`}
-        />
+        /> */}
         {(resumeApi?.phone || main.phone) && (
           <InfoRow icon={<PhoneIcon />} text={resumeApi?.phone ?? main.phone} />
         )}

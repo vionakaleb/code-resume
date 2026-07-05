@@ -5,7 +5,7 @@
     "role": "Software Engineer",
     "tagline": "Viona Kaleb",
     "username": "vionakaleb",
-    "shortBio": "Building digital products at large scale. Fullstack, frontend-heavy, UI/UX-minded, with a soft spot for cool systems and street cats.",
+    "shortBio": "Fullstack, Frontend-heavy Software Engineer, shipping scalable products. Master's in CS, mentor on Indonesia's leading mentoring platform. Loves writing, exploring new tech and street cats 🐈",
     "longBio": "<p>Deployed 3D wayfinding apps to serve thousands of visitors in high-traffic Singapore buildings. Architected a UK trading platform's Frontend with USD124M+ revenues and serving 1.2 million accounts globally. <p>Currently digitizing the largest state-owned bank in Indonesia, live in hundreds of branches, used by thousands of banking staff and customers, cutting fraud by 85%.</p> <p>Outside work: Building tools to help people, writing articles, reading novels, trail running and patting street cats. Aiming to build AI research into production-grade services that move industries forward at scale.</p>",
     "startedWorking": 2018,
     "location": "Jakarta, Indonesia",
@@ -13,7 +13,7 @@
     "email": "vionakaleb@gmail.com",
     "phone": "",
     "resumeUrl": "/Software Engineer - Viona Kaleb.pdf",
-    "image": "https://media.licdn.com/dms/image/v2/D5603AQFWtwDT_KfW8A/profile-displayphoto-crop_800_800/B56Z6tesfrI8AI-/0/1781026966395?e=1783555200&v=beta&t=QHHk6_L7rO6y46KP0umc39JWRGcrXclPk633uNE2drg",
+    "image": "/profile-pic.png",
     "social": [
       { "name": "Website", "url": "https://viona-kaleb.com" },
       { "name": "LinkedIn", "url": "https://linkedin.com/in/vionakaleb" },
@@ -79,16 +79,16 @@
     },
     {
       "name": "Wordpress",
-      "level": 70,
+      "level": 60,
       "type": "CMS"
     },
     {
-      "name": "GraphQL, SQL",
+      "name": "MySQL, PostgreSQL, GraphQL",
       "level": 80,
       "type": "Query Language"
     },
     {
-      "name": "PostgreSQL, Supabase",
+      "name": "Supabase",
       "level": 80,
       "type": "Database"
     },
@@ -146,7 +146,7 @@
     ],
     "personal": [
       {
-        "title": "Smart Branch live in 1,000+ branches, 30M users",
+        "title": "Smart Branch live in 2,000+ branches, 18M accounts",
         "year": "2024"
       },
       { "title": "YourPropFirm USD 124M+ revenue platform", "year": "2023" },
@@ -202,7 +202,7 @@
       "title": "Software Engineer",
       "years": "Jan 2024 - Present",
       "descriptions": [
-        "Built features for Smart Branch by Mandiri, a digital banking platform live across 1,000+ branches with 30 million users nationwide, contributing to an 85% reduction in fraud incidents.",
+        "Built features for Smart Branch by Mandiri, a digital banking platform live across 2,000+ branches with 30 million users nationwide, contributing to an 85% reduction in fraud incidents.",
         "Shipped wholesale banking features for KOPRA by Mandiri, the platform behind IDR 10,000+ trillion (USD 600B+) in annual transaction volume.",
         "Delivered banking workflows that fulfilled strict security, compliance and audit standards in collaboration with product, backend and QA teams."
       ],
@@ -263,7 +263,7 @@
   "projects": [
     {
       "title": "Smart Branch by Mandiri",
-      "description": "Digital banking platform live across 1,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
+      "description": "Digital banking platform live across 2,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
       "tech": ["Angular", "TypeScript", "Jest"],
       "url": "https://www.bankmandiri.co.id/smart-branch",
       "image": "E-FormLanding.png",
@@ -335,13 +335,39 @@
       "tag": "Featured"
     },
     {
+      "title": "ChapterNode",
+      "description": "Full-stack book tracker & recommender app on Information Retrieval (IR) weighting.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Fastify",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase"
+      ],
+      "url": "",
+      "image": "chapter-node.png",
+      "github": "",
+      "tag": "Personal"
+    },
+    {
       "title": "ATS Resume Profiler",
-      "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV against real job descriptions.",
-      "tech": ["React", "Vite", "Tailwind"],
+      "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV on real job descriptions.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Python",
+        "FastApi",
+        "PostgreSQL",
+        "Supabase",
+        "Docker"
+      ],
       "url": "https://resume-profiler.vercel.app/",
       "image": "ats-generator.png",
       "github": "",
-      "tag": "Side project"
+      "tag": "Personal"
     },
     {
       "title": "Verona by Telkomsel",
