@@ -24,6 +24,7 @@ import { GithubSection } from "./sections/GithubSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { ToolsSection } from "./sections/ToolsSection";
 import { FAQSection } from "./sections/FAQSection";
+import { LinkedInSection } from "./sections/LinkedInSection";
 import { getPublicResume } from "./api/resume";
 
 const resume = resumeJson as ResumeData;
@@ -35,6 +36,7 @@ const infoNavItems = [
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
+  { id: "linkedin", label: "LinkedIn" },
   { id: "services", label: "Services" },
   { id: "tools", label: "Tools" },
   { id: "faq", label: "FAQs" },
@@ -257,6 +259,7 @@ function InfoView({
       <EducationSection education={resume.education} resumeApi={resumeApi} />
       <AwardsSection awards={resume.awards} resumeApi={resumeApi} />
       <TestimonialsSection testimonials={resume.testimonials} />
+      <LinkedInSection />
       <ServicesSection />
       <ToolsSection stack={resume.stack} />
       <FAQSection />
