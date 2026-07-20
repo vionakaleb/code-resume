@@ -9,84 +9,84 @@ on:
     - cron: "10 7 * * *"
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
-permissions:
-  contents: write
-  pull-requests: write
+# permissions:
+#   contents: write
+#   pull-requests: write
 
-jobs:
-  daily-update:
-    runs-on: ubuntu-latest
+# jobs:
+#   daily-update:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.TARGET_BRANCH }}
-          fetch-depth: 0
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#         with:
+#           ref: ${{ env.TARGET_BRANCH }}
+#           fetch-depth: 0
 
-      - name: Configure git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+#       - name: Configure git identity
+#         run: |
+#           git config user.name "github-actions[bot]"
+#           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create branch name with today's date
-        id: branch
-        run: |
-          BRANCH_NAME="auto-update/$(date +'%Y-%m-%d')"
-          echo "name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+#       - name: Create branch name with today's date
+#         id: branch
+#         run: |
+#           BRANCH_NAME="auto-update/$(date +'%Y-%m-%d')"
+#           echo "name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Create or switch to the daily branch
-        run: |
-          git checkout -b "${{ steps.branch.outputs.name }}"
+#       - name: Create or switch to the daily branch
+#         run: |
+#           git checkout -b "${{ steps.branch.outputs.name }}"
 
-      - name: Make your daily changes
-        run: |
-          TIMESTAMP=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-          cat > workflow.md << EOF
-          # Daily Workflow Update
+#       - name: Make your daily changes
+#         run: |
+#           TIMESTAMP=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+#           cat > workflow.md << EOF
+#           # Daily Workflow Update
 
-          Last updated: ${TIMESTAMP}
+#           Last updated: ${TIMESTAMP}
 
-          Write your content here. Change this to whatever you want.
-          EOF
+#           Write your content here. Change this to whatever you want.
+#           EOF
 
-      - name: Check for actual changes
-        id: changes
-        run: |
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_changes=true" >> "$GITHUB_OUTPUT"
-          fi
+#       - name: Check for actual changes
+#         id: changes
+#         run: |
+#           if git diff --quiet && git diff --staged --quiet; then
+#             echo "has_changes=false" >> "$GITHUB_OUTPUT"
+#           else
+#             echo "has_changes=true" >> "$GITHUB_OUTPUT"
+#           fi
 
-      - name: Commit and push changes
-        if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          git add -A
-          git commit -m "chore: daily auto-update $(date +'%Y-%m-%d')"
-          git push origin "${{ steps.branch.outputs.name }}"
+#       - name: Commit and push changes
+#         if: steps.changes.outputs.has_changes == 'true'
+#         run: |
+#           git add -A
+#           git commit -m "chore: daily auto-update $(date +'%Y-%m-%d')"
+#           git push origin "${{ steps.branch.outputs.name }}"
 
-      - name: Create pull request
-        if: steps.changes.outputs.has_changes == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr create \
-            --title "chore: daily auto-update $(date +'%Y-%m-%d')" \
-            --body "Automated daily update generated on $(date -u +'%Y-%m-%dT%H:%M:%SZ').
+#       - name: Create pull request
+#         if: steps.changes.outputs.has_changes == 'true'
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           gh pr create \
+#             --title "chore: daily auto-update $(date +'%Y-%m-%d')" \
+#             --body "Automated daily update generated on $(date -u +'%Y-%m-%dT%H:%M:%SZ').
 
-          This PR was created automatically by the **Daily Auto Commit & PR** workflow.
+#           This PR was created automatically by the **Daily Auto Commit & PR** workflow.
 
-          ## What changed
-          - Updated \`logs/daily-updates.log\` with today's timestamp.
+#           ## What changed
+#           - Updated \`logs/daily-updates.log\` with today's timestamp.
 
-          > Review and merge when ready." \
-            --base "${{ env.TARGET_BRANCH }}" \
-            --head "${{ steps.branch.outputs.name }}"
+#           > Review and merge when ready." \
+#             --base "${{ env.TARGET_BRANCH }}" \
+#             --head "${{ steps.branch.outputs.name }}"
 
-      - name: Enable auto-delete branch after PR merge
-        if: steps.changes.outputs.has_changes == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr merge "${{ steps.branch.outputs.name }}" --delete-branch --auto --squash || true
+#       - name: Enable auto-delete branch after PR merge
+#         if: steps.changes.outputs.has_changes == 'true'
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           gh pr merge "${{ steps.branch.outputs.name }}" --delete-branch --auto --squash || true
