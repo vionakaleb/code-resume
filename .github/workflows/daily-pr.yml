@@ -1,7 +1,7 @@
 name: Daily Auto Commit & PR
 
 env:
-  TARGET_BRANCH: workflow
+  TARGET_BRANCH: main
 
 on:
   schedule:
