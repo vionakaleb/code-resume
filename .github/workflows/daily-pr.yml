@@ -1,13 +1,13 @@
 name: Daily Auto Commit & PR
 
-env:
-  TARGET_BRANCH: main
+# env:
+#   TARGET_BRANCH: main
 
-on:
-  schedule:
-    # Runs every day at 14:10 GMT+7 (07:10 UTC)
-    - cron: "10 7 * * *"
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+# on:
+#   schedule:
+#     # Runs every day at 14:10 GMT+7 (07:10 UTC)
+#     - cron: "10 7 * * *"
+#   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 # permissions:
 #   contents: write
