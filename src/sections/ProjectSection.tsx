@@ -133,9 +133,9 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="w-full bg-slate-200 rounded-lg mb-3 flex justify-center">
         <img
           src={
-            project.image?.includes("http")
-              ? project.image
-              : `/portfolio/${project.image}`
+            project.image
+              ? `/portfolio/${project.image}`
+              : `https://ui-avatars.com/api/?name=${project.title?.replace(/ /g, "+")}`
           }
           alt={project.title}
           className="h-[230px] max-w-full object-contain shadow-2xl"
