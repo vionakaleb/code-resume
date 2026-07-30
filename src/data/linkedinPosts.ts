@@ -9,6 +9,12 @@ const LINKEDIN_EMBED_BASE = "https://www.linkedin.com/embed/feed/update";
 
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "urn:li:share:7484843491152379904",
+    link: "https://www.linkedin.com/posts/vionakaleb_compfest2026-compfestid-xcelerate-ugcPost-7484843491152379904-lEbK/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABtfvw0BEeCfYmRN9CmBBlWYbyrfcEb7mzg",
+    embedUrl: `${LINKEDIN_EMBED_BASE}/urn:li:share:7484843491152379904`,
+    collapsedHeight: 560,
+  },
+  {
     id: "urn:li:share:7482293313488728064",
     link: "https://www.linkedin.com/posts/vionakaleb_sistech2026-womenintech-frontendengineering-activity-7482293314692730880-4r2-?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABtfvw0BEeCfYmRN9CmBBlWYbyrfcEb7mzg",
     embedUrl: `${LINKEDIN_EMBED_BASE}/urn:li:share:7482293313488728064`,

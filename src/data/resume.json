@@ -267,6 +267,51 @@
   ],
   "projects": [
     {
+      "title": "ChapterNode",
+      "description": "Full-stack book tracker & recommender app on Information Retrieval (IR) weighting.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Node.js",
+        "Fastify",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase"
+      ],
+      "url": "",
+      "image": "chapter-node.png",
+      "github": "https://github.com/vionakaleb/chapter-node-recommender",
+      "tag": "Personal"
+    },
+    {
+      "title": "ATS Resume Profiler",
+      "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV on real job descriptions.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Python",
+        "FastApi",
+        "PostgreSQL",
+        "Supabase",
+        "Docker"
+      ],
+      "url": "https://resume-profiler.netlify.app/",
+      "image": "ats-generator.png",
+      "github": "https://github.com/vionakaleb/resume-profiler",
+      "tag": "Personal"
+    },
+    {
+      "title": "Timesheet Builder",
+      "description": "Made for MCO Contract Resource and Vendors across Bank Mandiri.",
+      "tech": ["React", "Vite"],
+      "url": "https://mco-timesheet.netlify.app/",
+      "image": "https://ui-avatars.com/api/?name=Timesheet+Builder",
+      "github": "https://github.com/vionakaleb/mco-timesheet-generator",
+      "tag": "Personal"
+    },
+    {
       "title": "Smart Branch by Mandiri",
       "description": "Digital banking platform live across 2,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
       "tech": ["Angular", "TypeScript", "Jest"],
@@ -338,41 +383,6 @@
       "image": "Yamisok2.jpg",
       "github": "",
       "tag": "Featured"
-    },
-    {
-      "title": "ChapterNode",
-      "description": "Full-stack book tracker & recommender app on Information Retrieval (IR) weighting.",
-      "tech": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "Fastify",
-        "Prisma",
-        "PostgreSQL",
-        "Supabase"
-      ],
-      "url": "",
-      "image": "chapter-node.png",
-      "github": "",
-      "tag": "Personal"
-    },
-    {
-      "title": "ATS Resume Profiler",
-      "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV on real job descriptions.",
-      "tech": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "Python",
-        "FastApi",
-        "PostgreSQL",
-        "Supabase",
-        "Docker"
-      ],
-      "url": "https://resume-profiler.vercel.app/",
-      "image": "ats-generator.png",
-      "github": "",
-      "tag": "Personal"
     },
     {
       "title": "Verona by Telkomsel",
