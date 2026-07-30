@@ -132,7 +132,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
       <div className="w-full bg-slate-200 rounded-lg mb-3 flex justify-center">
         <img
-          src={`/portfolio/${project.image}`}
+          src={
+            project.image?.includes("http")
+              ? project.image
+              : `/portfolio/${project.image}`
+          }
           alt={project.title}
           className="h-[230px] max-w-full object-contain shadow-2xl"
         />

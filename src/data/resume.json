@@ -267,24 +267,6 @@
   ],
   "projects": [
     {
-      "title": "ChapterNode",
-      "description": "Full-stack book tracker & recommender app on Information Retrieval (IR) weighting.",
-      "tech": [
-        "React",
-        "Vite",
-        "Tailwind",
-        "Node.js",
-        "Fastify",
-        "Prisma",
-        "PostgreSQL",
-        "Supabase"
-      ],
-      "url": "",
-      "image": "chapter-node.png",
-      "github": "https://github.com/vionakaleb/chapter-node-recommender",
-      "tag": "Personal"
-    },
-    {
       "title": "ATS Resume Profiler",
       "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV on real job descriptions.",
       "tech": [
@@ -303,8 +285,26 @@
       "tag": "Personal"
     },
     {
+      "title": "ChapterNode",
+      "description": "Full-stack book tracker & recommender app on Information Retrieval (IR) weighting.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Node.js",
+        "Fastify",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase"
+      ],
+      "url": "",
+      "image": "chapter-node.png",
+      "github": "https://github.com/vionakaleb/chapter-node-recommender",
+      "tag": "Personal"
+    },
+    {
       "title": "Timesheet Builder",
-      "description": "Made for MCO Contract Resource and Vendors across Bank Mandiri.",
+      "description": "A tool built for Contract Resource and Vendor Employees.",
       "tech": ["React", "Vite"],
       "url": "https://mco-timesheet.netlify.app/",
       "image": "https://ui-avatars.com/api/?name=Timesheet+Builder",
