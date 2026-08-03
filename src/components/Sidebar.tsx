@@ -88,7 +88,7 @@ export function Sidebar({
           icon={<MapPinIcon />}
           text={resumeApi?.location ?? main.location}
         />
-        {main.social?.find((soc) => soc?.name.toLowerCase() === "website") && (
+        {/* {main.social?.find((soc) => soc?.name.toLowerCase() === "website") && (
           <InfoRow
             icon={<GlobeIcon className="h-4 w-4" />}
             text={"viona-kaleb.com"}
@@ -97,7 +97,7 @@ export function Sidebar({
                 ?.url
             }
           />
-        )}
+        )} */}
         {/* <InfoRow icon={<LanguagesIcon />} text={main.languages} /> */}
         {/* <InfoRow
           icon={<MailIcon />}
@@ -145,13 +145,13 @@ export function Sidebar({
       </div>
 
       <div className="flex flex-col gap-1 mt-auto">
-        <button
+        {/* <button
           type="button"
           onClick={onWorkClick}
           className="w-full border border-ink-dim hover:border-accent hover:text-accent text-ink-primary text-sm font-medium py-3 rounded-md transition-colors"
         >
           See Projects
-        </button>
+        </button> */}
         <a href={main.resumeUrl} download className="py-3">
           <button
             type="button"
