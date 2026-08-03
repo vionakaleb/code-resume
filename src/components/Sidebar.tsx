@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { ResumeMain } from "@/data/types";
+import type { ProjectItem, ResumeMain } from "@/data/types";
 import {
   BriefcaseIcon,
   MapPinIcon,
@@ -14,6 +14,7 @@ import { Github, GlobeIcon, Linkedin } from "lucide-react";
 
 interface SidebarProps {
   main: ResumeMain;
+  projects?: ProjectItem[];
   resumeApi: any;
   isLoading: boolean;
   onContactClick: () => void;
@@ -22,6 +23,7 @@ interface SidebarProps {
 
 export function Sidebar({
   main,
+  projects,
   resumeApi,
   isLoading,
   onContactClick,
@@ -133,18 +135,16 @@ export function Sidebar({
         )}
       </div>
 
-      <a
-        href={main.resumeUrl}
-        download
-        className="inline-flex items-center justify-between gap-2 border border-ink-dim hover:border-accent text-ink-primary text-sm px-4 py-3 rounded-md transition-colors mb-auto group"
-      >
-        <span>Download CV</span>
-        <span className="text-ink-muted group-hover:text-accent transition-colors">
-          <DownloadIcon />
-        </span>
-      </a>
+      <div className="space-y-4 text-sm text-ink-secondary mb-8">
+        <InfoRow icon={false} text="Feat. Projects:" isTitle />
+        {projects
+          ?.filter((p) => p.featured)
+          ?.map((p) => (
+            <InfoRow icon={false} text={`➤ ${p.title}`} href={p.url} />
+          ))}
+      </div>
 
-      <div className="mt-8 space-y-3">
+      <div className="flex flex-col gap-1 mt-auto">
         <button
           type="button"
           onClick={onWorkClick}
@@ -152,6 +152,14 @@ export function Sidebar({
         >
           See Projects
         </button>
+        <a href={main.resumeUrl} download className="py-3">
+          <button
+            type="button"
+            className="w-full border border-ink-dim hover:border-accent hover:text-accent text-ink-primary text-sm font-medium py-3 rounded-md transition-colors"
+          >
+            Download CV
+          </button>
+        </a>
         <button
           type="button"
           onClick={onContactClick}
@@ -168,12 +176,13 @@ interface InfoRowProps {
   icon: React.ReactNode;
   text: string;
   href?: string;
+  isTitle?: boolean;
 }
 
-function InfoRow({ icon, text, href }: InfoRowProps) {
+function InfoRow({ icon, text, href, isTitle = false }: InfoRowProps) {
   const content = (
     <span className="flex items-center gap-3 hover:text-ink-primary transition-colors">
-      <span className="text-ink-muted shrink-0">{icon}</span>
+      {icon && <span className="text-ink-muted shrink-0">{icon}</span>}
       <span className="truncate">{text}</span>
     </span>
   );
@@ -184,5 +193,5 @@ function InfoRow({ icon, text, href }: InfoRowProps) {
       </a>
     );
   }
-  return <div>{content}</div>;
+  return <div className={isTitle && "text-white"}>{content}</div>;
 }

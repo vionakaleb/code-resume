@@ -6,6 +6,7 @@ import type { ProjectItem } from "@/data/types";
 
 interface ProjectSectionProps {
   id?: string;
+  featured?: boolean;
   projects: ProjectItem[];
 }
 
@@ -13,6 +14,7 @@ type ViewMode = "grid" | "list";
 
 export function ProjectSection({
   id = "project",
+  featured = false,
   projects,
 }: ProjectSectionProps) {
   const [view, setView] = useState<ViewMode>("grid");
@@ -21,32 +23,34 @@ export function ProjectSection({
     <Section id={id} comment="Featured Projects">
       <div className="flex items-center justify-between mb-8">
         <div className="text-ink-secondary text-sm">
-          Projects(
+          {featured && "Featured "}Projects(
           <span className="text-ink-primary">
             {projects.length.toString().padStart(2, "0")}
           </span>
           )
         </div>
-        <div className="flex items-center gap-2">
-          <ToggleBtn
-            active={view === "grid"}
-            onClick={() => setView("grid")}
-            aria-label="Grid view"
-          >
-            <GridIcon />
-          </ToggleBtn>
-          <ToggleBtn
-            active={view === "list"}
-            onClick={() => setView("list")}
-            aria-label="List view"
-          >
-            <ListIcon />
-          </ToggleBtn>
-        </div>
+        {!featured && (
+          <div className="flex items-center gap-2">
+            <ToggleBtn
+              active={view === "grid"}
+              onClick={() => setView("grid")}
+              aria-label="Grid view"
+            >
+              <GridIcon />
+            </ToggleBtn>
+            <ToggleBtn
+              active={view === "list"}
+              onClick={() => setView("list")}
+              aria-label="List view"
+            >
+              <ListIcon />
+            </ToggleBtn>
+          </div>
+        )}
       </div>
 
       <AnimatePresence mode="wait">
-        {view === "grid" ? (
+        {view === "grid" && !featured ? (
           <motion.div
             key="grid"
             initial={{ opacity: 0 }}

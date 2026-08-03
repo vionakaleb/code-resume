@@ -267,6 +267,26 @@
   ],
   "projects": [
     {
+      "title": "DocShift - Document Converter",
+      "description": "Convert, split, merge, and crop documents. Secured and free. Your files stay private.",
+      "tech": ["Next.js", "Docker"],
+      "url": "https://docshift.up.railway.app/",
+      "image": "",
+      "github": "https://github.com/vionakaleb/docshift-converter",
+      "tag": "Personal",
+      "featured": true
+    },
+    {
+      "title": "Timesheet Builder",
+      "description": "A tool built for Contract Resource and Vendor Employees.",
+      "tech": ["React", "Vite"],
+      "url": "https://mco-timesheet.netlify.app/",
+      "image": "",
+      "github": "https://github.com/vionakaleb/mco-timesheet-generator",
+      "tag": "Personal",
+      "featured": true
+    },
+    {
       "title": "ATS Resume Profiler",
       "description": "AI-integrated resume and website generator and analyzer. Helps job seekers tune their CV on real job descriptions.",
       "tech": [
@@ -282,7 +302,8 @@
       "url": "https://resume-profiler.netlify.app/",
       "image": "ats-generator.png",
       "github": "https://github.com/vionakaleb/resume-profiler",
-      "tag": "Personal"
+      "tag": "Personal",
+      "featured": true
     },
     {
       "title": "ChapterNode",
@@ -303,22 +324,13 @@
       "tag": "Personal"
     },
     {
-      "title": "Timesheet Builder",
-      "description": "A tool built for Contract Resource and Vendor Employees.",
-      "tech": ["React", "Vite"],
-      "url": "https://mco-timesheet.netlify.app/",
-      "image": "",
-      "github": "https://github.com/vionakaleb/mco-timesheet-generator",
-      "tag": "Personal"
-    },
-    {
       "title": "Smart Branch by Mandiri",
       "description": "Digital banking platform live across 2,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
       "tech": ["Angular", "TypeScript", "Jest"],
       "url": "https://www.bankmandiri.co.id/smart-branch",
       "image": "E-FormLanding.png",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "KOPRA by Mandiri",
@@ -327,7 +339,7 @@
       "url": "https://koprabymandiri.com/",
       "image": "KopraSOPP.png",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "YourPropFirm",
@@ -336,7 +348,7 @@
       "url": "https://yourpropfirm.com/",
       "image": "YourPropFirmDashboardV2.png",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "Superagen Ecommerce",
@@ -345,7 +357,7 @@
       "url": "https://superapp.id/",
       "image": "SuperagenOrder.png",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
 
     {
@@ -355,7 +367,7 @@
       "url": "https://www.adactive.asia/id",
       "image": "SupremeCourts.jpg",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "Singapore Discovery Centre",
@@ -364,7 +376,7 @@
       "url": "https://www.adactive.asia/id",
       "github": "",
       "tech": ["React.js"],
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "Woodsquare",
@@ -373,7 +385,7 @@
       "url": "https://www.adactive.asia/id",
       "github": "",
       "tech": ["React.js"],
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "Yamisok Platform",
@@ -382,7 +394,7 @@
       "url": "https://yamisok.com/",
       "image": "Yamisok2.jpg",
       "github": "",
-      "tag": "Featured"
+      "tag": "Work"
     },
     {
       "title": "Verona by Telkomsel",

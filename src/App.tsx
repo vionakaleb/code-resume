@@ -32,6 +32,7 @@ const resume = resumeJson as ResumeData;
 const infoNavItems = [
   { id: "hero", label: "Index" },
   { id: "about", label: "About Me" },
+  { id: "project", label: "Feat. Projects" },
   { id: "experience", label: "Career" },
   { id: "education", label: "Education" },
   { id: "awards", label: "Awards" },
@@ -152,6 +153,7 @@ export default function App() {
     <div className="h-screen flex bg-bg-base text-ink-primary overflow-hidden">
       <Sidebar
         main={resume.main}
+        projects={resume.projects}
         resumeApi={resumeApi}
         isLoading={state?.status === "loading"}
         onContactClick={handleSidebarContact}
@@ -255,6 +257,10 @@ function InfoView({
         onContactClick={onContactClick}
       />
       <AboutSection main={resume.main} resumeApi={resumeApi} />
+      <ProjectSection
+        projects={resume.projects.filter((p) => p.featured)}
+        featured={true}
+      />
       <ExperienceSection work={resume.work} resumeApi={resumeApi} />
       <EducationSection education={resume.education} resumeApi={resumeApi} />
       <AwardsSection awards={resume.awards} resumeApi={resumeApi} />

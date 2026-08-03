@@ -72,6 +72,7 @@ export interface ProjectItem {
   url: string;
   tag: string;
   image: string;
+  featured?: boolean;
 }
 
 export interface ResumeData {
