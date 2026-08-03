@@ -193,5 +193,5 @@ function InfoRow({ icon, text, href, isTitle = false }: InfoRowProps) {
       </a>
     );
   }
-  return <div className={isTitle && "text-white"}>{content}</div>;
+  return <div className={isTitle ? "text-white" : ""}>{content}</div>;
 }
