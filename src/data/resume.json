@@ -299,9 +299,9 @@
         "Supabase",
         "Docker"
       ],
-      "url": "https://resume-profiler.netlify.app/",
+      "url": "https://reesu.netlify.app/",
       "image": "ats-generator.png",
-      "github": "https://github.com/vionakaleb/resume-profiler",
+      "github": "https://github.com/vionakaleb/reesu",
       "tag": "Personal",
       "featured": true
     },
