@@ -12,6 +12,7 @@ const tabs: { key: TabKey; label: string }[] = [
   { key: "info", label: "viona-info.tsx" },
   { key: "work", label: "work-projects.tsx" },
   { key: "blog", label: "blog-posts.tsx" },
+  { key: "resume", label: "resume-cv.tsx" },
 ];
 
 export function TopBar({
@@ -22,7 +23,7 @@ export function TopBar({
 }: TopBarProps) {
   return (
     <div className="sticky top-0 z-20 bg-bg-base/95 backdrop-blur border-b border-bg-border flex items-stretch">
-      <nav className="flex" role="tablist">
+      <nav className="flex overflow-auto" role="tablist">
         {tabs.map((tab) => {
           const isActive = tab.key === activeTab;
           return (

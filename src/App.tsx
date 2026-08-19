@@ -7,9 +7,15 @@ import { TopBar } from "@/components/TopBar";
 import { IndexNav } from "@/components/IndexNav";
 import { StatusBar } from "@/components/StatusBar";
 import { LineGutter } from "@/components/LineGutter";
-import { WorkTabHeader, BlogTabHeader } from "@/components/TabHeaders";
+import {
+  WorkTabHeader,
+  BlogTabHeader,
+  ResumeTabHeader,
+} from "@/components/TabHeaders";
 import { HeroSection } from "@/sections/HeroSection";
 import { EducationSection } from "@/sections/EducationSection";
+import { PublicationsSection } from "@/sections/PublicationsSection";
+import { CertificatesSection } from "@/sections/CertificatesSection";
 import { AboutSection } from "@/sections/AboutSection";
 import { ProjectSection } from "@/sections/ProjectSection";
 import { StackSection } from "@/sections/StackSection";
@@ -18,6 +24,7 @@ import { TestimonialsSection } from "@/sections/TestimonialsSection";
 import { BlogSection } from "@/sections/BlogSection";
 import { ContactSection } from "@/sections/ContactSection";
 import { ExperienceSection } from "@/sections/ExperienceSection";
+import { ResumeSection } from "@/sections/ResumeSection";
 import { useLiveTime } from "@/hooks/useLiveTime";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { GithubSection } from "./sections/GithubSection";
@@ -35,11 +42,13 @@ const infoNavItems = [
   { id: "project", label: "Feat. Projects" },
   { id: "experience", label: "Career" },
   { id: "education", label: "Education" },
+  { id: "publications", label: "Publications" },
+  { id: "certificates", label: "Certificates" },
   { id: "awards", label: "Awards" },
   { id: "testimonials", label: "Testimonials" },
   { id: "linkedin", label: "LinkedIn" },
   { id: "services", label: "Services" },
-  { id: "tools", label: "Tools" },
+  // { id: "tools", label: "Tools" },
   { id: "faq", label: "FAQs" },
   { id: "contact", label: "Contact" },
 ];
@@ -52,10 +61,12 @@ const workNavItems = [
 
 const blogNavItems = [{ id: "blog", label: "All Articles" }];
 
+const resumeNavItems = [{ id: "resume", label: "Preview" }];
+
 export default function App() {
   const getTabFromHash = (): TabKey => {
     const hash = window.location.hash.replace("#", "");
-    if (hash === "work" || hash === "blog") return hash;
+    if (hash === "work" || hash === "blog" || hash === "resume") return hash;
     return "info";
   };
   const [activeTab, setActiveTab] = useState<TabKey>(getTabFromHash);
@@ -68,6 +79,7 @@ export default function App() {
   const sectionIds = useMemo(() => {
     if (activeTab === "info") return infoNavItems.map((i) => i.id);
     if (activeTab === "work") return workNavItems.map((i) => i.id);
+    if (activeTab === "resume") return resumeNavItems.map((i) => i.id);
     return blogNavItems.map((i) => i.id);
   }, [activeTab]);
 
@@ -138,7 +150,9 @@ export default function App() {
       ? infoNavItems
       : activeTab === "work"
         ? workNavItems
-        : blogNavItems;
+        : activeTab === "resume"
+          ? resumeNavItems
+          : blogNavItems;
 
   // if (!state.data)
   // return (
@@ -195,6 +209,7 @@ export default function App() {
                   )}
                   {activeTab === "work" && <WorkView resume={resume} />}
                   {activeTab === "blog" && <BlogView />}
+                  {activeTab === "resume" && <ResumeView resume={resume} />}
                 </motion.div>
               </AnimatePresence>
             </main>
@@ -263,11 +278,19 @@ function InfoView({
       />
       <ExperienceSection work={resume.work} resumeApi={resumeApi} />
       <EducationSection education={resume.education} resumeApi={resumeApi} />
+      <PublicationsSection
+        publications={resume.publications}
+        resumeApi={resumeApi}
+      />
+      <CertificatesSection
+        certificates={resume.certificates}
+        resumeApi={resumeApi}
+      />
       <AwardsSection awards={resume.awards} resumeApi={resumeApi} />
       <TestimonialsSection testimonials={resume.testimonials} />
       <LinkedInSection />
       <ServicesSection />
-      <ToolsSection stack={resume.stack} />
+      {/* <ToolsSection stack={resume.stack} /> */}
       <FAQSection />
       <ContactSection main={resume.main} />
     </>
@@ -292,6 +315,16 @@ function BlogView() {
       <BlogTabHeader />
 
       <BlogSection id="blog" showHeading={false} limit={20} />
+    </>
+  );
+}
+
+function ResumeView({ resume }: { resume: ResumeData }) {
+  return (
+    <>
+      <ResumeTabHeader />
+
+      <ResumeSection main={resume.main} />
     </>
   );
 }

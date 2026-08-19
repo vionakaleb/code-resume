@@ -18,6 +18,24 @@ export function WorkTabHeader() {
   );
 }
 
+export function ResumeTabHeader() {
+  return (
+    <div className="mb-12">
+      <div className="text-sm code-comment mb-6">{`<!-- My latest CV -->`}</div>
+      <motion.h1
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="display-font text-5xl md:text-7xl xl:text-8xl leading-[0.95]"
+      >
+        <span className="text-ink-primary">My</span>
+        <br />
+        <span className="text-ink-dim">Resume</span>
+      </motion.h1>
+    </div>
+  );
+}
+
 export function BlogTabHeader() {
   return (
     <div className="mb-12">

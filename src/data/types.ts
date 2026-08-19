@@ -10,7 +10,7 @@ export interface ResumeMain {
   languages: string;
   email: string;
   phone: string;
-  resumeUrl: string;
+  resumeBasePath: string;
   social: SocialLink[];
   image: string;
   username: string;
@@ -65,6 +65,25 @@ export interface WorkItem {
   skills: string[];
 }
 
+export interface PublicationItem {
+  title: string;
+  publisher: string;
+  date: string;
+  authors: string[];
+  url: string;
+  description: string;
+}
+
+export interface CertificateItem {
+  name: string;
+  issuer: string;
+  issueDate: string;
+  credentialId: string;
+  credentialUrl: string;
+  skills: string[];
+  media: string;
+}
+
 export interface ProjectItem {
   title: string;
   description: string;
@@ -83,6 +102,8 @@ export interface ResumeData {
   education: Education[];
   work: WorkItem[];
   projects: ProjectItem[];
+  publications: PublicationItem[];
+  certificates: CertificateItem[];
 }
 
 export interface MediumArticle {
@@ -94,6 +115,6 @@ export interface MediumArticle {
   categories: string[];
 }
 
-export type TabKey = "info" | "work" | "blog";
+export type TabKey = "info" | "work" | "blog" | "resume";
 
 export type ViewMode = "grid" | "list";

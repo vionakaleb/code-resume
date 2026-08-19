@@ -10,6 +10,7 @@ import {
   LinkedinIcon,
 } from "@/components/icons";
 import { getYearExperience } from "@/hooks/useLiveTime";
+import { useResumeFile } from "@/hooks/useResumeFile";
 import { Github, GlobeIcon, Linkedin } from "lucide-react";
 
 interface SidebarProps {
@@ -29,6 +30,8 @@ export function Sidebar({
   onContactClick,
   onWorkClick,
 }: SidebarProps) {
+  const resume = useResumeFile(main.resumeBasePath);
+
   if (isLoading) {
     return (
       <div className="hidden lg:flex w-[300px] xl:w-[340px] flex-col min-w-[340px] min-h-[75vh] items-center justify-center gap-4">
@@ -152,9 +155,15 @@ export function Sidebar({
         >
           See Projects
         </button> */}
-        <a href={main.resumeUrl} download className="py-3">
+        <a
+          href={resume.file?.url}
+          download={resume.file?.fileName}
+          aria-disabled={!resume.file}
+          className={`py-3 ${!resume.file ? "pointer-events-none opacity-50" : ""}`}
+        >
           <button
             type="button"
+            disabled={!resume.file}
             className="w-full border border-ink-dim hover:border-accent hover:text-accent text-ink-primary text-sm font-medium py-3 rounded-md transition-colors"
           >
             Download CV

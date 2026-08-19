@@ -43,6 +43,6 @@ export const FAQS = [
   {
     question: "Can I download your CV?",
     answer:
-      "Absolutely. Hit the Download CV button in the sidebar and you'll get my latest resume as a PDF.",
+      "Absolutely. Hit the Download CV button in the sidebar, or check the Resume tab to preview and download my latest resume.",
   },
 ];

@@ -12,7 +12,7 @@
     "languages": "English, Indonesian",
     "email": "vionakaleb@gmail.com",
     "phone": "",
-    "resumeUrl": "/Software Engineer - Viona Kaleb.pdf",
+    "resumeBasePath": "/resume/Software Engineer - Viona Kaleb",
     "image": "/profile-pic.png",
     "social": [
       { "name": "Website", "url": "https://viona-kaleb.com" },
@@ -178,6 +178,27 @@
       "author": "Alvian Supriadi",
       "role": "Software Engineer",
       "org": "Yamisok Platform"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Sample Certificate Name",
+      "issuer": "Sample Issuer",
+      "issueDate": "2026",
+      "credentialId": "SAMPLE-CRED-ID",
+      "credentialUrl": "https://example.com/credential",
+      "skills": ["Skill One", "Skill Two"],
+      "media": "sample-certificate.png"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Sample Publication Title",
+      "publisher": "Sample Publisher / Journal",
+      "date": "2026",
+      "authors": ["Viona Kaleb"],
+      "url": "https://example.com/publication",
+      "description": "Placeholder description of the publication. Replace with real details."
     }
   ],
   "education": [

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import type { ResumeMain, TabKey } from "@/data/types";
+import { useResumeFile } from "@/hooks/useResumeFile";
 import { DownloadIcon } from "lucide-react";
 import { SocialPill } from "./AboutSection";
 
@@ -25,6 +26,8 @@ export function HeroSection({
   onTabChange,
   onContactClick,
 }: HeroSectionProps) {
+  const resume = useResumeFile(main.resumeBasePath);
+
   return (
     <Section id={id} comment="Hero Section">
       <motion.h1
@@ -64,9 +67,10 @@ export function HeroSection({
           See Projects
         </a>
         <a
-          href={main.resumeUrl}
-          download
-          className="flex items-center justify-between gap-2 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer"
+          href={resume.file?.url}
+          download={resume.file?.fileName}
+          aria-disabled={!resume.file}
+          className={`flex items-center justify-between gap-2 px-4 sm:py-3 py-5 border border-ink-dim text-ink-secondary text-xs font-semibold rounded hover:border-ink-muted hover:text-ink-primary transition-colors cursor-pointer ${!resume.file ? "pointer-events-none opacity-50" : ""}`}
         >
           <span className="text-ink-muted group-hover:text-accent transition-colors">
             <DownloadIcon height={16} width={16} />
