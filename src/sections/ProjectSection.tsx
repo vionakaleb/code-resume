@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/Section";
 import { ArrowRightIcon, GridIcon, ListIcon } from "@/components/icons";
 import type { ProjectItem } from "@/data/types";
+import { CertificateLightbox } from "./CertificatesSection";
 
 interface ProjectSectionProps {
   id?: string;
@@ -18,6 +19,7 @@ export function ProjectSection({
   projects,
 }: ProjectSectionProps) {
   const [view, setView] = useState<ViewMode>("grid");
+  const [preview, setPreview] = useState<any | null>(null);
 
   return (
     <Section id={id} comment="Featured Projects">
@@ -60,7 +62,13 @@ export function ProjectSection({
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             {projects.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={i}
+                preview={preview}
+                setPreview={setPreview}
+              />
             ))}
           </motion.div>
         ) : (
@@ -109,13 +117,18 @@ function ToggleBtn({ active, onClick, children, ...rest }: ToggleBtnProps) {
 interface ProjectCardProps {
   project: ProjectItem;
   index: number;
+  preview?: any;
+  setPreview: (set: any) => void;
 }
 
-function ProjectCard({ project, index }: ProjectCardProps) {
+function ProjectCard({
+  project,
+  index,
+  preview,
+  setPreview,
+}: ProjectCardProps) {
   return (
     <motion.a
-      href={project.url}
-      target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -123,18 +136,31 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -3 }}
       className="group panel p-5 hover:border-accent/50 transition-colors block"
     >
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div>
-          <div className="text-xs text-accent mb-1">{project.tag}</div>
-          <h3 className="text-ink-primary font-semibold text-lg">
-            {project.title}
-          </h3>
+      <a href={project.url} target="_blank">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div className="text-xs text-accent mb-1">{project.tag}</div>
+            <h3 className="text-ink-primary font-semibold text-lg">
+              {project.title}
+            </h3>
+          </div>
+          <span className="text-accent group-hover:translate-x-0.5 transition-transform shrink-0">
+            <ArrowRightIcon />
+          </span>
         </div>
-        <span className="text-accent group-hover:translate-x-0.5 transition-transform shrink-0">
-          <ArrowRightIcon />
-        </span>
-      </div>
-      <div className="w-full bg-slate-200 rounded-lg mb-3 flex justify-center">
+      </a>
+      <div
+        onClick={() =>
+          setPreview({
+            media: project.image
+              ? `/portfolio/${project.image}`
+              : `https://ui-avatars.com/api/?name=${project.title?.replace(/ /g, "+")}`,
+            name: project.title,
+            issuer: project.description,
+          })
+        }
+        className="w-full bg-slate-200 rounded-lg mb-3 flex justify-center"
+      >
         <img
           src={
             project.image
@@ -145,6 +171,15 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           className="h-[230px] max-w-full object-contain shadow-2xl"
         />
       </div>
+      <AnimatePresence>
+        {preview && (
+          <CertificateLightbox
+            cert={preview}
+            mediaSrc={preview.media}
+            onClose={() => setPreview(null)}
+          />
+        )}
+      </AnimatePresence>
       <p className="text-sm text-ink-secondary leading-relaxed mb-4">
         {project.description}
       </p>
@@ -162,7 +197,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
   );
 }
 
-function ProjectRow({ project, index }: ProjectCardProps) {
+function ProjectRow({ project, index }: any) {
   return (
     <motion.a
       href={project.url}
@@ -183,7 +218,7 @@ function ProjectRow({ project, index }: ProjectCardProps) {
         </p>
       </div>
       <div className="hidden md:flex gap-1.5 shrink-0">
-        {project.tech.slice(0, 3).map((t) => (
+        {project.tech.slice(0, 3).map((t: any) => (
           <span key={t} className="text-xs text-ink-muted">
             {t}
           </span>

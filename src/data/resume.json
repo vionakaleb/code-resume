@@ -182,23 +182,84 @@
   ],
   "certificates": [
     {
-      "name": "Sample Certificate Name",
-      "issuer": "Sample Issuer",
+      "name": "Get Started with Databricks for Generative AI",
+      "issuer": "Databricks",
       "issueDate": "2026",
-      "credentialId": "SAMPLE-CRED-ID",
-      "credentialUrl": "https://example.com/credential",
-      "skills": ["Skill One", "Skill Two"],
-      "media": "sample-certificate.png"
+      "credentialId": "",
+      "credentialUrl": "",
+      "skills": ["Big Data"],
+      "media": "https://media.licdn.com/dms/image/v2/D562DAQHOmtrDhyEazA/profile-treasury-image-shrink_1920_1920/B56Z.oRz4lJoAc-/0/1785234670156?e=1787889600&v=beta&t=J28RTEvNRx2c2XOtgYA1V1dGgctfmydCSMnKPNw6n1Q"
+    },
+    {
+      "name": "Frontend Developer (React) Certificate",
+      "issuer": "HackerRank",
+      "issueDate": "2026",
+      "credentialId": "1c4f95ef9ce2",
+      "credentialUrl": "https://www.hackerrank.com/certificates/1c4f95ef9ce2",
+      "skills": ["React"],
+      "media": "https://media.licdn.com/dms/image/v2/D562DAQFQaBrXQSQwTQ/profile-treasury-document-cover-images_800/B56Z9mJPAQKUBA-/0/1784125125844?e=1787889600&v=beta&t=mSQ8-XBIHYwFJa2MIUdiwrwKmMajm8LqDPSFST4IXWI"
+    },
+    {
+      "name": "Angular (Intermediate) Certificate",
+      "issuer": "HackerRank",
+      "issueDate": "2026",
+      "credentialId": "df0f692c7d2a",
+      "credentialUrl": "https://www.hackerrank.com/certificates/df0f692c7d2a",
+      "skills": ["Angular"],
+      "media": "https://media.licdn.com/dms/image/v2/D562DAQFt5hBmfV2Ggw/profile-treasury-document-images_1920/B56Z9mI38XGQAk-/1/1784125031399?e=1788393600&v=beta&t=hv-9f5GVemUw7W6VyXVzcnM7MmxhRzqxlG3PF-VYO7Q"
+    },
+    {
+      "name": "SQL (Advanced) Certificate",
+      "issuer": "HackerRank",
+      "issueDate": "2026",
+      "credentialId": "0240b98bad77",
+      "credentialUrl": "https://www.hackerrank.com/certificates/0240b98bad77",
+      "skills": ["MySQL"],
+      "media": "https://media.licdn.com/dms/image/v2/D562DAQGktDe8qddPvA/profile-treasury-document-images_1920/B56Z9mIgAAIQAk-/1/1784124933715?e=1788393600&v=beta&t=4QtEhFHnpr9FwtFGLkhNbJm_37qzK8KTBcS4jdMNf5A"
+    },
+    {
+      "name": "Duolingo English Test",
+      "issuer": "Duolingo English Test",
+      "issueDate": "2026",
+      "credentialId": "lwotu128cva4z5ae",
+      "credentialUrl": "https://certs.duolingo.com/lwotu128cva4z5ae",
+      "skills": ["English"],
+      "media": "https://media.licdn.com/dms/image/v2/D562DAQGz0qtOSgDWFw/profile-treasury-document-images_1920/B56Z9mHYGWLAAk-/1/1784124638925?e=1788393600&v=beta&t=IlosDT10_knjgsHDckOyGLdU1bTnDLwTOf6pPNiigAs"
+    },
+    {
+      "name": "EFSET English Certificate",
+      "issuer": "EF",
+      "issueDate": "2016",
+      "credentialId": "D6hgoh",
+      "credentialUrl": "https://cert.efset.org/D6hgoh",
+      "skills": ["English"],
+      "media": "https://cert.efset.org/_next/static/media/logo.06bf8183.svg"
     }
   ],
   "publications": [
     {
-      "title": "Sample Publication Title",
-      "publisher": "Sample Publisher / Journal",
+      "title": "Linear Regression-Based Predictive Big Data Analytics  For Supply Chain Demand Planning",
+      "publisher": "Jurnal Sains dan Teknologi Tadulako",
       "date": "2026",
-      "authors": ["Viona Kaleb"],
-      "url": "https://example.com/publication",
-      "description": "Placeholder description of the publication. Replace with real details."
+      "authors": ["Viona Z. A. KALEB", "Wiranto H. UTOMO"],
+      "url": "https://doi.org/10.22487/jstt.v12i2.1070",
+      "description": "DOI: 10.22487/jstt.v12i2.1070"
+    },
+    {
+      "title": "Case Study: ChapterNode - Feature Engineering for Book Recommendation Systems",
+      "publisher": "IntechPress",
+      "date": "2026",
+      "authors": ["Viona Zatil Aqmar Kaleb, Onno W. Purbo"],
+      "url": "https://intechpress.itts.ac.id/2026/07/24/case-study-chapternode",
+      "description": "ISBN: 978-634-05-4094-9"
+    },
+    {
+      "title": "Efficiency of Temporal Convolutional Networks in Karate Kata Evaluation: A Comparative Study",
+      "publisher": "Informatika Mulawarman: Jurnal Ilmiah Ilmu Komputer Vol. 21, No. 1, Februari 2026",
+      "date": "2026",
+      "authors": ["Viona Zatil Aqmar Kaleb, Wiranto Herry Utomo"],
+      "url": "https://doi.org/10.30872/jim.v21i1.28888",
+      "description": "DOI: 10.30872/jim.v21i1.28888"
     }
   ],
   "education": [

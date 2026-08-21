@@ -82,6 +82,7 @@ export interface CertificateItem {
   credentialUrl: string;
   skills: string[];
   media: string;
+  isMedia?: boolean;
 }
 
 export interface ProjectItem {

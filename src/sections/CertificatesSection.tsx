@@ -45,6 +45,9 @@ export function CertificatesSection({
         {preview && (
           <CertificateLightbox
             cert={preview}
+            mediaSrc={
+              preview.isMedia ? `/certificates/${preview.media}` : preview.media
+            }
             onClose={() => setPreview(null)}
           />
         )}
@@ -60,7 +63,7 @@ interface CertificateCardProps {
 }
 
 function CertificateCard({ cert, index, onPreview }: CertificateCardProps) {
-  const mediaSrc = cert.media ? `/certificates/${cert.media}` : "";
+  const mediaSrc = cert.isMedia ? `/certificates/${cert.media}` : cert.media;
 
   return (
     <motion.div
@@ -136,15 +139,15 @@ function CertificateCard({ cert, index, onPreview }: CertificateCardProps) {
   );
 }
 
-function CertificateLightbox({
+export function CertificateLightbox({
   cert,
+  mediaSrc,
   onClose,
 }: {
   cert: CertificateItem;
+  mediaSrc: string;
   onClose: () => void;
 }) {
-  const mediaSrc = cert.media ? `/certificates/${cert.media}` : "";
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
