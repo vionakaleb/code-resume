@@ -352,7 +352,7 @@
       "title": "DocShift - Document Converter",
       "description": "Convert, split, merge, and crop documents. Secured and free. Your files stay private.",
       "tech": ["Next.js", "Docker"],
-      "url": "https://docshift.up.railway.app/",
+      "url": "https://docshift-converter.onrender.com/",
       "image": "",
       "github": "https://github.com/vionakaleb/docshift-converter",
       "tag": "Personal",
@@ -400,7 +400,7 @@
         "PostgreSQL",
         "Supabase"
       ],
-      "url": "",
+      "url": "https://chapternode.viona-kaleb.com",
       "image": "chapter-node.png",
       "github": "https://github.com/vionakaleb/chapter-node-recommender",
       "tag": "Personal"
