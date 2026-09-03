@@ -1,16 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, User, Bot } from "lucide-react";
+import { MessageSquare, X, User, Bot } from "lucide-react";
+import { TabKey } from "@/data/types";
 
 type ChatBotProps = {
-  setActiveTab: (tab: string) => void;
+  setActiveTab: (tab: TabKey) => void;
   scrollTo: (id: string) => void;
 };
 
 const QUICK_QUESTIONS = [
   {
     label: "About Me",
-    response: "I'm a Fullstack, Frontend-heavy Software Engineer focused on shipping scalable products. I hold a Master's in CS and love mentoring, writing, and street cats! 🐈",
+    response:
+      "I'm a Fullstack, Frontend-heavy Software Engineer focused on shipping scalable products. I hold a Master's in CS and love mentoring, writing, and street cats! 🐈",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("about"), 100);
@@ -18,7 +20,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Featured Projects",
-    response: "I've built several tools like DocShift (Document Converter), Reesu (AI Resume Builder), and a Timesheet Builder. Let me show you the highlights!",
+    response:
+      "I've built several tools like DocShift (Document Converter), Reesu (AI Resume Builder), and a Timesheet Builder. Let me show you the highlights!",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("project"), 100);
@@ -26,7 +29,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Career",
-    response: "I've had an exciting journey working at Bank Mandiri, Hypestacks in London, and SuperApp (YC W18). I specialize in architecting high-traffic frontends.",
+    response:
+      "I've had an exciting journey working at Bank Mandiri, Hypestacks in London, and SuperApp (YC W18). I specialize in architecting high-traffic frontends.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("experience"), 100);
@@ -34,7 +38,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Education",
-    response: "I hold both a Master of Science (MSIT) and a Bachelor of Science (BSIT) from President University, with a strong focus on Machine Learning.",
+    response:
+      "I hold both a Master of Science (MSIT) and a Bachelor of Science (BSIT) from President University, with a strong focus on Machine Learning.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("education"), 100);
@@ -42,7 +47,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Publications",
-    response: "I've published research on Big Data Analytics for supply chains and feature engineering for book recommendation systems.",
+    response:
+      "I've published research on Big Data Analytics for supply chains and feature engineering for book recommendation systems.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("publications"), 100);
@@ -50,7 +56,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Certificates",
-    response: "I'm certified in Generative AI (Databricks) and have advanced certifications in React, Angular, and SQL from HackerRank.",
+    response:
+      "I'm certified in Generative AI (Databricks) and have advanced certifications in React, Angular, and SQL from HackerRank.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("certificates"), 100);
@@ -58,7 +65,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Awards",
-    response: "I've received a Government Scholarship for top graduates and successfully shipped systems serving millions of users.",
+    response:
+      "I've received a Government Scholarship for top graduates and successfully shipped systems serving millions of users.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("awards"), 100);
@@ -66,7 +74,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Testimonials",
-    response: "My colleagues from Bank Mandiri and SuperApp have highlighted my technical skills, problem-solving, and reliability.",
+    response:
+      "My colleagues from Bank Mandiri and SuperApp have highlighted my technical skills, problem-solving, and reliability.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("testimonials"), 100);
@@ -74,7 +83,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Social Links",
-    response: "You can find my professional journey on LinkedIn and my code on GitHub. I'll take you to my contact section!",
+    response:
+      "You can find my professional journey on LinkedIn and my code on GitHub. I'll take you to my contact section!",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("contact"), 100);
@@ -82,7 +92,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Industries I worked in",
-    response: "I've worked across Banking (Digital Banking), Fintech (B2B Trading), E-commerce (Hyper-local supply chain), and Gov-tech (3D Wayfinding).",
+    response:
+      "I've worked across Banking (Digital Banking), Fintech (B2B Trading), E-commerce (Hyper-local supply chain), and Gov-tech (3D Wayfinding).",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("info");
       setTimeout(() => scrollTo("experience"), 100);
@@ -97,7 +108,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Tech Stack",
-    response: "My core expertise is in TypeScript, React/Next.js, and Angular, with backend experience in Python (FastAPI) and Node.js.",
+    response:
+      "My core expertise is in TypeScript, React/Next.js, and Angular, with backend experience in Python (FastAPI) and Node.js.",
     action: (setActiveTab: any, scrollTo: any) => {
       setActiveTab("work");
       setTimeout(() => scrollTo("stack"), 100);
@@ -105,7 +117,8 @@ const QUICK_QUESTIONS = [
   },
   {
     label: "Resume Preview",
-    response: "Of course! I'll switch you over to the Resume Preview tab for a full professional view.",
+    response:
+      "Of course! I'll switch you over to the Resume Preview tab for a full professional view.",
     action: (setActiveTab: any) => {
       setActiveTab("resume");
     },
@@ -115,10 +128,13 @@ const QUICK_QUESTIONS = [
 export function ChatBot({ setActiveTab, scrollTo }: ChatBotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-  const [messages, setMessages] = useState<{ role: "bot" | "user"; content: string }[]>([
+  const [messages, setMessages] = useState<
+    { role: "bot" | "user"; content: string }[]
+  >([
     {
       role: "bot",
-      content: "Hi there! 👋 I'm Viona's AI assistant. How can I help you today?",
+      content:
+        "Hi there! 👋 I'm Viona's AI assistant. How can I help you today?",
     },
   ]);
 
@@ -126,7 +142,11 @@ export function ChatBot({ setActiveTab, scrollTo }: ChatBotProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleQuickQuestion = (question: string, response: string, action: (setActiveTab: any, scrollTo: any) => void) => {
+  const handleQuickQuestion = (
+    question: string,
+    response: string,
+    action: (setActiveTab: any, scrollTo: any) => void,
+  ) => {
     setMessages((prev) => [...prev, { role: "user", content: question }]);
 
     // Simulate bot thinking
@@ -178,11 +198,21 @@ export function ChatBot({ setActiveTab, scrollTo }: ChatBotProps) {
                   key={idx}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  <div className={`flex gap-2 max-w-[80%] ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}>
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === "user" ? "bg-ink-primary text-bg-base" : "bg-accent text-white"}`}>
-                      {msg.role === "user" ? <User size={12} /> : <Bot size={12} />}
+                  <div
+                    className={`flex gap-2 max-w-[80%] ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}
+                  >
+                    <div
+                      className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === "user" ? "bg-ink-primary text-bg-base" : "bg-accent text-white"}`}
+                    >
+                      {msg.role === "user" ? (
+                        <User size={12} />
+                      ) : (
+                        <Bot size={12} />
+                      )}
                     </div>
-                    <div className={`p-2 rounded-lg text-xs ${msg.role === "user" ? "bg-accent text-white rounded-tr-none" : "bg-ink-muted text-ink-primary rounded-tl-none"}`}>
+                    <div
+                      className={`p-2 rounded-lg text-xs ${msg.role === "user" ? "bg-accent text-white rounded-tr-none" : "bg-ink-muted text-ink-primary rounded-tl-none"}`}
+                    >
                       {msg.content}
                     </div>
                   </div>
@@ -193,12 +223,16 @@ export function ChatBot({ setActiveTab, scrollTo }: ChatBotProps) {
 
             {/* Quick Questions */}
             <div className="p-3 border-t border-ink-muted bg-bg-base overflow-y-auto max-h-40">
-              <p className="text-[10px] text-ink-muted uppercase font-bold mb-2 px-1">Ask me about:</p>
+              <p className="text-[10px] text-ink-muted uppercase font-bold mb-2 px-1">
+                Ask me about:
+              </p>
               <div className="flex flex-wrap gap-2">
                 {QUICK_QUESTIONS.map((q, idx) => (
                   <button
                     key={idx}
-                    onClick={() => handleQuickQuestion(q.label, q.response, q.action)}
+                    onClick={() =>
+                      handleQuickQuestion(q.label, q.response, q.action)
+                    }
                     className="text-[11px] px-2 py-1 rounded-full border border-accent text-accent hover:bg-accent hover:text-white transition-colors"
                   >
                     {q.label}

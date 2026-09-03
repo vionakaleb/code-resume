@@ -406,6 +406,16 @@
       "tag": "Personal"
     },
     {
+      "title": "TaskPulse Bot",
+      "description": "Telegram bot that acts as a personal life & career assistant. Smart Task Management, CRUD lists for checklists & bills with auto-retention. Career Assistant, AI-powered resume parsing (PDF/DOCX) & targeted job scraping from LinkedIn, Lever & Greenhouse. AI-integrated, ask for your todo-list assistance, or just ask anything you want.",
+      "tech": ["Node.js"],
+      "url": "https://t.me/TaskPulseApiBot",
+      "image": "https://cdn5.telesco.pe/file/SHroz5KychAnqERaM5xXJ6QC_2LWiX30QW9MhlrBVZvtRj9nvhklAPHZN4Xe8y6rxgXnTLJx51BePk9IB8MUZsCe-y0ZAb8njDQdJPaNxrKVdvLSV0fNjytSAq4Fg580Ts1u-WPLAXu-e6XBb7rGAotsIwO0k3egKVbYDi2cfscg05amT0GoNVFuxVk0H9XdpVz1ZLAa9ipAo3OxXrO2Ar61peRqjnlRSB1kaweY-xKs4uoQdj4kFtLUfPBkBR26-pIhd06G7YVwIAuvGxpYuWkLbdoK7xd2udeega3pjaNTphBPnyHsAzNLxvdKZQuO81MpSGjX4m00APf2g0wlKw.jpg",
+      "github": "https://github.com/vionakaleb/taskpulse-bot",
+      "tag": "Personal",
+      "featured": true
+    },
+    {
       "title": "Smart Branch by Mandiri",
       "description": "Digital banking platform live across 2,000+ Bank Mandiri branches, used by 30 million customers and tied to an 85% reduction in fraud incidents.",
       "tech": ["Angular", "TypeScript", "Jest"],
