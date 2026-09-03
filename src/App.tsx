@@ -7,6 +7,7 @@ import { TopBar } from "@/components/TopBar";
 import { IndexNav } from "@/components/IndexNav";
 import { StatusBar } from "@/components/StatusBar";
 import { LineGutter } from "@/components/LineGutter";
+import { ChatBot } from "@/components/ChatBot";
 import {
   WorkTabHeader,
   BlogTabHeader,
@@ -224,6 +225,7 @@ export default function App() {
           <StatusBar social={resume.main.social} />
         </div>
       </div>
+      <ChatBot setActiveTab={handleTabChange} scrollTo={scrollTo} />
     </div>
   );
 }
