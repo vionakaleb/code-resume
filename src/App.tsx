@@ -102,7 +102,7 @@ export default function App() {
         const result: any = await Promise.race([
           getPublicResume(),
           new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("timeout")), 3000),
+            setTimeout(() => reject(new Error("timeout")), 2000),
           ),
         ]);
         if (cancelled) return;
