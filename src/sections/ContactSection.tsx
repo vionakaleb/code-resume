@@ -46,13 +46,13 @@ export function ContactSection({ id = "contact", main }: ContactSectionProps) {
                 value={main.email}
                 href={`mailto:${main.email}`}
               />
-              {main.phone && (
+              {/* {main.phone && (
                 <ContactLine
                   label="Phone"
                   value={main.phone}
                   href={`tel:${main.phone.replace(/\s/g, "")}`}
                 />
-              )}
+              )} */}
               <ContactLine label="Location" value={main.location} />
             </div>
           </div>

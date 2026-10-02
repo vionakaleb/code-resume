@@ -52,7 +52,7 @@ export function Sidebar({
       </div>
     );
   }
-  console.log(resumeApi, "resumeApi");
+
   return (
     <aside className="hidden lg:flex w-[300px] xl:w-[340px] shrink-0 bg-bg-base border-r border-bg-border flex-col px-6 py-8">
       <div className="text-xs text-ink-muted mb-8">Welcome to my world!</div>
@@ -107,9 +107,9 @@ export function Sidebar({
           text={resumeApi?.email ?? main.email}
           href={`mailto:${main.email}`}
         /> */}
-        {(resumeApi?.phone || main.phone) && (
+        {/* {(resumeApi?.phone || main.phone) && (
           <InfoRow icon={<PhoneIcon />} text={resumeApi?.phone ?? main.phone} />
-        )}
+        )} */}
         {main.social?.find((soc) => soc?.name.toLowerCase() === "linkedin") && (
           <InfoRow
             icon={<Linkedin className="h-4 w-4" />}

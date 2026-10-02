@@ -7,7 +7,6 @@ export const offlineResume = {
     headline: "Senior Software Engineer | M.SC | Mentor",
     location: "Jakarta, Indonesia",
     email: "vionakaleb@gmail.com",
-    phone: "+6282311888164",
     website: "viona-kaleb.com",
     linkedin: "linkedin.com/in/vionakaleb",
     summary:
