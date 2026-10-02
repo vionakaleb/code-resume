@@ -99,7 +99,12 @@ export default function App() {
 
     (async () => {
       try {
-        const result: any = await getPublicResume();
+        const result: any = await Promise.race([
+          getPublicResume(),
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("timeout")), 3000),
+          ),
+        ]);
         if (cancelled) return;
         const content = result?.content || result;
         setState({ status: "ready", data: content, error: null });
