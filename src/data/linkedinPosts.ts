@@ -9,6 +9,12 @@ const LINKEDIN_EMBED_BASE = "https://www.linkedin.com/embed/feed/update";
 
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "urn:li:share:7493492634036895744",
+    link: "https://www.linkedin.com/posts/vionakaleb_machinelearning-computervision-compfest-activity-7493492634879963136-akxx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABtfvw0BEeCfYmRN9CmBBlWYbyrfcEb7mzg",
+    embedUrl: `${LINKEDIN_EMBED_BASE}/urn:li:ugcPost:7493492634036895744`,
+    collapsedHeight: 560,
+  },
+  {
     id: "urn:li:share:7484843491152379904",
     link: "https://www.linkedin.com/posts/vionakaleb_compfest2026-compfestid-xcelerate-ugcPost-7484843491152379904-lEbK/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABtfvw0BEeCfYmRN9CmBBlWYbyrfcEb7mzg",
     embedUrl: `${LINKEDIN_EMBED_BASE}/urn:li:ugcPost:7484843491152379904`,

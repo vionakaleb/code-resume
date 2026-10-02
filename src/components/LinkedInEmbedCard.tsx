@@ -10,7 +10,7 @@ export function LinkedInEmbedCard({ post }: LinkedInEmbedCardProps) {
 
   const iframeSrc = isExpanded ? post.embedUrl : `${post.embedUrl}?collapsed=1`;
 
-  const iframeHeight = isExpanded ? 800 : post.collapsedHeight;
+  const iframeHeight = isExpanded ? 1200 : post.collapsedHeight;
 
   return (
     <button
@@ -18,18 +18,24 @@ export function LinkedInEmbedCard({ post }: LinkedInEmbedCardProps) {
       className="panel w-full text-left cursor-pointer transition-all duration-300 hover:border-accent/50 group overflow-hidden"
     >
       <div className="relative">
-        <a href={post.link} target="_blank">
-          <iframe
-            src={iframeSrc}
-            height={iframeHeight}
-            width="100%"
-            frameBorder="0"
-            allowFullScreen
-            title="LinkedIn post"
-            className="pointer-events-none rounded-lg transition-[height] duration-300"
-            loading="lazy"
-          />
-        </a>
+        <div
+          className={
+            isExpanded ? "max-h-[700px] overflow-y-auto overscroll-contain" : ""
+          }
+        >
+          <a href={post.link} target="_blank">
+            <iframe
+              src={iframeSrc}
+              height={iframeHeight}
+              width="100%"
+              frameBorder="0"
+              allowFullScreen
+              title="LinkedIn post"
+              className="pointer-events-none rounded-lg transition-[height] duration-300"
+              loading="lazy"
+            />
+          </a>
+        </div>
         <div
           className="px-4 py-3 border-t border-bg-border flex items-center justify-between"
           onClick={() => setIsExpanded(!isExpanded)}

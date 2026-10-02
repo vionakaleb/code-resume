@@ -182,15 +182,6 @@
   ],
   "certificates": [
     {
-      "name": "Get Started with Databricks for Generative AI",
-      "issuer": "Databricks",
-      "issueDate": "2026",
-      "credentialId": "",
-      "credentialUrl": "",
-      "skills": ["Big Data"],
-      "media": "https://media.licdn.com/dms/image/v2/D562DAQHOmtrDhyEazA/profile-treasury-image-shrink_1920_1920/B56Z.oRz4lJoAc-/0/1785234670156?e=1787889600&v=beta&t=J28RTEvNRx2c2XOtgYA1V1dGgctfmydCSMnKPNw6n1Q"
-    },
-    {
       "name": "Frontend Developer (React) Certificate",
       "issuer": "HackerRank",
       "issueDate": "2026",

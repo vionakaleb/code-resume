@@ -4,6 +4,20 @@ import { Section } from "@/components/Section";
 import { ExternalLinkIcon } from "@/components/icons";
 import type { CertificateItem } from "@/data/types";
 
+export const DEFAULT_CERTIFICATE_IMAGE = "/certificates/default-certificate.svg";
+
+export function getCertificateSrc(cert: CertificateItem): string {
+  if (!cert.media) return DEFAULT_CERTIFICATE_IMAGE;
+  return cert.isMedia ? `/certificates/${cert.media}` : cert.media;
+}
+
+function handleImageError(e: React.SyntheticEvent<HTMLImageElement>) {
+  const img = e.currentTarget;
+  if (!img.src.endsWith(DEFAULT_CERTIFICATE_IMAGE)) {
+    img.src = DEFAULT_CERTIFICATE_IMAGE;
+  }
+}
+
 interface CertificatesSectionProps {
   id?: string;
   certificates: CertificateItem[];
@@ -45,9 +59,7 @@ export function CertificatesSection({
         {preview && (
           <CertificateLightbox
             cert={preview}
-            mediaSrc={
-              preview.isMedia ? `/certificates/${preview.media}` : preview.media
-            }
+            mediaSrc={getCertificateSrc(preview)}
             onClose={() => setPreview(null)}
           />
         )}
@@ -63,7 +75,7 @@ interface CertificateCardProps {
 }
 
 function CertificateCard({ cert, index, onPreview }: CertificateCardProps) {
-  const mediaSrc = cert.isMedia ? `/certificates/${cert.media}` : cert.media;
+  const mediaSrc = getCertificateSrc(cert);
 
   return (
     <motion.div
@@ -78,16 +90,12 @@ function CertificateCard({ cert, index, onPreview }: CertificateCardProps) {
         aria-label={`Preview certificate: ${cert.name}`}
         className="group relative w-full h-40 rounded-lg overflow-hidden border border-bg-border bg-slate-200 flex items-center justify-center"
       >
-        {mediaSrc ? (
-          <img
-            src={mediaSrc}
-            alt={cert.name}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-            }}
-          />
-        ) : null}
+        <img
+          src={mediaSrc}
+          alt={cert.name}
+          className="w-full h-full object-cover"
+          onError={handleImageError}
+        />
         <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 text-transparent group-hover:text-white text-xs font-medium uppercase tracking-wide transition-colors">
           Preview Certificate
         </span>
@@ -173,17 +181,12 @@ export function CertificateLightbox({
         >
           ✕
         </button>
-        {mediaSrc ? (
-          <img
-            src={mediaSrc}
-            alt={cert.name}
-            className="w-full max-h-[75vh] object-contain bg-slate-100"
-          />
-        ) : (
-          <div className="w-full h-64 flex items-center justify-center text-ink-muted text-sm">
-            No preview available
-          </div>
-        )}
+        <img
+          src={mediaSrc || DEFAULT_CERTIFICATE_IMAGE}
+          alt={cert.name}
+          className="w-full max-h-[75vh] object-contain bg-slate-100"
+          onError={handleImageError}
+        />
         <div className="p-4">
           <h3 className="text-ink-primary font-semibold">{cert.name}</h3>
           <p className="text-ink-secondary text-sm">{cert.issuer}</p>
