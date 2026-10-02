@@ -34,6 +34,7 @@ import { ToolsSection } from "./sections/ToolsSection";
 import { FAQSection } from "./sections/FAQSection";
 import { LinkedInSection } from "./sections/LinkedInSection";
 import { getPublicResume } from "./api/resume";
+import { offlineResume } from "@/data/offlineResume";
 
 const resume = resumeJson as ResumeData;
 
@@ -104,7 +105,7 @@ export default function App() {
         setState({ status: "ready", data: content, error: null });
       } catch {
         if (cancelled) return;
-        setState({ status: "ready", data: null, error: null });
+        setState({ status: "ready", data: offlineResume, error: null });
       }
     })();
 
