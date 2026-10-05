@@ -97,6 +97,34 @@ export const offlineResume = {
         dates: "2026",
         bullets: [""],
       },
+      {
+        title: "Angular (Intermediate) Certificate",
+        org: "HackerRank",
+        location: "https://www.hackerrank.com/certificates/df0f692c7d2a",
+        dates: "2026",
+        bullets: [""],
+      },
+      {
+        title: "SQL (Advanced) Certificate",
+        org: "HackerRank",
+        location: "https://www.hackerrank.com/certificates/0240b98bad77",
+        dates: "2026",
+        bullets: [""],
+      },
+      {
+        title: "Duolingo English Test",
+        org: "HackerRank",
+        location: "https://certs.duolingo.com/lwotu128cva4z5ae",
+        dates: "2026",
+        bullets: [""],
+      },
+      {
+        title: "EFSET English Certificate",
+        org: "HackerRank",
+        location: "https://cert.efset.org/D6hgoh",
+        dates: "2026",
+        bullets: [""],
+      },
     ],
     achievements: [
       {

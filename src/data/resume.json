@@ -182,13 +182,22 @@
   ],
   "certificates": [
     {
+      "name": "Software Engineer Certificate",
+      "issuer": "HackerRank",
+      "issueDate": "2026",
+      "credentialId": "1c4f95ef9ce2",
+      "credentialUrl": "https://www.hackerrank.com/certificates/5d688f4165d4",
+      "skills": ["React"],
+      "media": "blob:https://www.hackerrank.com/a9e316d4-391a-4e1b-af92-631ba4e91990"
+    },
+    {
       "name": "Frontend Developer (React) Certificate",
       "issuer": "HackerRank",
       "issueDate": "2026",
       "credentialId": "1c4f95ef9ce2",
       "credentialUrl": "https://www.hackerrank.com/certificates/1c4f95ef9ce2",
       "skills": ["React"],
-      "media": "https://media.licdn.com/dms/image/v2/D562DAQFQaBrXQSQwTQ/profile-treasury-document-cover-images_800/B56Z9mJPAQKUBA-/0/1784125125844?e=1787889600&v=beta&t=mSQ8-XBIHYwFJa2MIUdiwrwKmMajm8LqDPSFST4IXWI"
+      "media": "blob:https://www.hackerrank.com/d552e313-626f-41e4-9559-3e0ed3db2faf"
     },
     {
       "name": "Angular (Intermediate) Certificate",
@@ -197,7 +206,7 @@
       "credentialId": "df0f692c7d2a",
       "credentialUrl": "https://www.hackerrank.com/certificates/df0f692c7d2a",
       "skills": ["Angular"],
-      "media": "https://media.licdn.com/dms/image/v2/D562DAQFt5hBmfV2Ggw/profile-treasury-document-images_1920/B56Z9mI38XGQAk-/1/1784125031399?e=1788393600&v=beta&t=hv-9f5GVemUw7W6VyXVzcnM7MmxhRzqxlG3PF-VYO7Q"
+      "media": "blob:https://www.hackerrank.com/63df72e9-19b8-4158-94df-c92a3e66dd4a"
     },
     {
       "name": "SQL (Advanced) Certificate",
@@ -206,7 +215,7 @@
       "credentialId": "0240b98bad77",
       "credentialUrl": "https://www.hackerrank.com/certificates/0240b98bad77",
       "skills": ["MySQL"],
-      "media": "https://media.licdn.com/dms/image/v2/D562DAQGktDe8qddPvA/profile-treasury-document-images_1920/B56Z9mIgAAIQAk-/1/1784124933715?e=1788393600&v=beta&t=4QtEhFHnpr9FwtFGLkhNbJm_37qzK8KTBcS4jdMNf5A"
+      "media": "blob:https://www.hackerrank.com/9be9c467-aa60-47d1-a237-8aac5af1e51c"
     },
     {
       "name": "Duolingo English Test",
